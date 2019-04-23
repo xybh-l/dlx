@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function()
+        {
+            var oTxt=document.getElementById('txt1');
+            var oBtn1=document.getElementById('btn1');
+            var oUl1=document.getElementById('ul1');
+            oBtn1.onclick=function()
+            {
+                var oLi=document.createElement('li');
+                var aLi=document.getElementsByTagName('li');
+               oLi.innerHTML=oTxt.value;
+               /* oUl1.appendChild(oLi)*/
+                /*父级.appendChild(子级)*/
+                if(aLi.length>0)
+                {
+                oUl1.insertBefore(oLi,aLi[0]);
+                }
+                else
+                {
+                oUl1.appendChild(oLi);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1"></ul>
+    <input id="txt1" type="text">
+    <input id="btn1" type="button" value="创建">
+</body>
+</html>

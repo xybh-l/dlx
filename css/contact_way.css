@@ -1,0 +1,157 @@
+* {
+    /*清空margin padding初始值*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    height: 80px;
+    width: 1900px;
+    margin: 0 auto;
+}
+
+#dituContent{
+    margin: 20px 20px;
+}
+a {
+    text-decoration: none;
+    color: rgb(104, 53, 53);
+    margin : auto 30px;
+}
+
+#header .h_center{
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    flex: 1;
+}
+#header .h_center .header_l{
+    height: 80px;
+    width: 300px;
+    float: left;
+}
+#header .h_center .header_r{
+    width: 600px;
+    float: right;
+    height: 80px;
+    display: flex;
+}
+#header .h_center .header_r div{
+    height: 80px;
+    width: 140px;
+    line-height: 80px;
+    text-align: center;
+    display: inline-block;
+    flex: 1;
+}
+#header .h_center .header_r div a:hover{
+    /*background-image: url(../image/1.png);
+    background-size: 100px 30px;*/
+    color: rgb(223, 112, 22);
+}
+
+#header .h_center img {
+    height: 80px;
+}
+
+#center{
+    height: 335px;
+    width: 1900px;
+    margin: 0 auto;
+    background: blue;
+}
+#contact{
+    overflow: hidden;
+    padding-bottom: 30px;
+    min-height: 600px;
+    height: 800px;
+    width: 1200px;
+    margin: 0 auto;
+}
+#contact .contact_div{
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
+}
+#contact .contact_div img{
+    width: 400px;
+    height: 310px;
+}
+#page{
+    width: 1903px;
+    height: 221px;
+    margin: 0 auto;
+    background: url(../image/contact/footerbg.jpg);
+}
+#center .center_pg{
+    text-align:center;
+}
+
+#contact .c{
+    background:indianred;
+    width: px;
+    height: 100px;
+}
+
+#contact .contact_div{
+    width: 320px;
+    height: 302px;
+    float: left;
+    margin-top: 36px;
+    margin-right: 20px;
+}
+#contact .txt{
+    width: 320px;
+    padding: 20px 14px;
+    border: 1px solid #eaeaea;
+    border-top: none;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: left;
+}
+#neck{
+    margin: 0 auto;
+    height: 50px;
+    width: 1900px;
+    text-align: center;
+    font: 30px "楷体";
+}
+#page .page_center{
+    height: 221px;
+    width: 1400px;
+    margin: 0 auto;
+}
+#page .page_center .pageleft{
+    float: right;
+    width: 350px;
+    margin-top: 100px;
+    margin-left: 220px;
+    font:16px "楷体";
+    color: #000000;
+    text-align: center;
+}
+#footer {
+    text-margin: center;
+    width: 1200px;
+    height: 300;
+    padding-top: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#footer .link {
+    text-align: center;
+}
+
+#footer .link a {
+    text-decoration: none;
+    color: rgb(104, 53, 53);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#copyright {
+    text-align: center;
+    margin-top: 20px;
+}

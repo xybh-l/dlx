@@ -1,0 +1,187 @@
+* {
+
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    /*消除下划线*/
+}
+
+a:hover{
+    color:  rgb(141,0,0);
+    text-decoration-style: underline;
+}
+
+#headtop {
+    margin: 0 auto;
+    width: 1000px;
+    height: 80px;
+
+}
+
+#headtop .logo {
+    height: 38px;
+    width: 160px;
+
+}
+
+#headtop .logo img {
+    height: 60px;
+    width: 137px;
+}
+
+#headtop .Live {
+    float: right;
+    text-align: center;
+    font: 10px "微软雅黑";
+}
+
+#headtop .Live span {
+    float: right;
+}
+
+#head {
+    width: 1200px;
+    height: 45px;
+    margin: 0 auto;
+    border-radius: 5px 5px 5px 5px;
+    background: rgb(224, 18, 34);
+    border: yellow 1px solid;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#head .word {
+    margin: 0 auto;
+    width: 1100px;
+    display: flex;
+}
+
+#head .word a {
+    width: 43px;
+    font-size: 18px;
+    line-height: 47px;
+    color: #ececec;
+    text-align: center;
+    flex: 1;
+}
+
+#head .word a:hover {
+    font-size: 20px;
+}
+#center{
+    height: 1000px;
+    position: relative;
+}
+#center #center_top{
+    height: 100px;
+    width: 100%;
+    background: rgb(239,239,235);
+  position: relative;
+}
+#center #center_top #center_top_center{
+    width: 50%;
+    height: 100px;
+    margin: 0 auto;
+    /*box-shadow: 5px 5px 15px #ccc;*/
+    /*x的偏移量 y的偏移量 模糊程度*/
+}
+#center #center_top #center_top_center #ctc_top{
+    height: 50px;
+    width: 100%;
+    background: rgb(239,239,235);
+    line-height: 50px;
+  
+}
+#center #center_top #center_top_center #ctc_bottom
+{
+     height: 50px;
+     width: 50%;
+     background: white;
+     color: #666;
+     margin-top:0; 
+     position: absolute;
+     top: 50px;
+     padding: 20px;
+}
+#center #center_bottom{
+    height: 900px;
+    width: 100%;
+}
+#center #center_bottom #center_bottom_center{
+    height: 900px;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 9px 20px 10px #ccc;
+    /*x的偏移量 y的偏移量 模糊程度*/
+    position: relative;
+}
+#center #center_bottom #center_bottom_center #cbc_left
+{
+    height: 850px;
+    width: 85%;
+    position: absolute;
+    top: 50px;
+    float: left;
+}
+#center #center_bottom #center_bottom_center #cbc_left #cbc_left_left
+{
+    height: 800px;
+    width: 80%;
+    float: left;
+}
+#center #center_bottom #center_bottom_center #cbc_left #cbc_left_right
+{
+    height: 800px;
+    width: 20%;
+    float: left;
+    list-style: none;
+}
+#center #center_bottom #center_bottom_center #cbc_left #cbc_left_right ul{
+    list-style: none;
+}
+#center #center_bottom #center_bottom_center #cbc_left #cbc_left_left ul li
+{
+    margin-top: 10px;
+}
+#center #center_bottom #center_bottom_center #cbc_left #cbc_left_right ul li
+{
+   margin-top:10px; 
+}
+#center #center_bottom #center_bottom_center #cbc_right{
+    width: 15%;
+    height: 800px;
+    position: absolute;
+    top: 50px;
+    float: left;
+    right: 0;
+    line-height: 750px;
+    text-align: center;
+}
+#center #center_bottom #center_bottom_center #cbc_bottom{
+    height:50px;
+    width: 100%;
+    position: absolute;
+    bottom:0;
+    text-align: center;
+}
+#center #center_bottom #center_bottom_center #cbc_bottom span{
+    margin:10px;
+}
+#footer .link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#footer .link a {
+    text-decoration: none;
+    color: rgb(104, 53, 53);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#copyright {
+    text-align: center;
+    margin-top: 20px;
+}

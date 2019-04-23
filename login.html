@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+
+    <div id="header">
+        <div class="h_center">
+           <a href="index.html"> <img src="image/logo4.png" alt=""></a>
+            <p>欢迎来到登录页面!</p>
+        </div>
+    </div>
+
+    <!--中部-->
+    <div id="login_body">
+        <div class="login_b_center">
+            <div class="login_bg">
+                <h4>用户登录</h4>
+                <form action="logincheck.php" method="post" id="login">
+                    <!--用户名-->
+                    <div class="username"><span><img src="image/userName_Icon.png" alt=""></span><input type="text" name="username">
+                    </div>
+                    <!--密码-->
+                    <div class="password"><span><img src="image/password_Icon.png" alt=""></span><input type="password" name="password">
+                    </div>
+                    <!--登录按钮-->
+                    <div class="login_btn"><input type="submit" name="submit" value="登录" /></div>
+                    <div class="forgot_pwd">
+                        <a href="">忘记密码</a>
+                        <a href="">忘记用户名</a>
+                        <a href="regist.html">免费注册</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--尾部-->
+    <div id="footer">
+        <div class="link">
+            <a href="aboutus.html">关于我们</a>
+            |
+            <a href="contact_way.html">联系我们</a>
+            |
+            <a href="#">人才招聘</a>
+            |
+            <a href="#">商家入驻</a>
+            |
+            <a href="#">广告服务</a>
+            |
+            <a href="http://www.lanwang.online" title="qq空间">友情链接</a>
+        </div>
+    </div>
+    <div id="copyright">
+        © 2019 donglitao.cn 版权所有
+    </div>
+    <audio autoplay="autoplay" controls="controls" loop="loop" preload="auto"
+        src="music/鹿予 - 可能否（清新温暖向）（Cover：木小雅）.music.music.music.wav">
+        你的浏览器版本太低，不支持audio标签
+    </audio>
+</body>
+
+</html>

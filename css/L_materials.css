@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    /*消除下划线*/
+}
+
+#header{
+    height: 100px;
+    box-shadow: 5px 5px 15px #ccc;
+    /*x的偏移量 y的偏移量 模糊程度*/
+}
+#header .header_center{
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+}
+#header .header_center #header_center_left{
+ height: 100px;
+ width: 30%;
+ float: left;
+}
+#header .header_center #header_center_left img
+{
+    height:100px;
+    width: 80%;
+}
+#header .header_center #header_center_right{
+    height: 100px;
+    width:70% ;
+    float: left;
+    padding: 1%;
+    position: relative;
+}
+#header .header_center #header_center_right #btn1{
+    width:  40%;
+    height: 50px;
+}
+#header .header_center #header_center_right #btn2{
+    height: 50px;
+    width: 8%;
+}
+#header .header_center #header_center_right #h_c_r_right{
+    border: 1px solid;
+    width: 20%;
+    height: 60%;
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#head{
+    height: 40px;
+    background: rgb(62,61,67);
+}
+#head #head_center{
+    height: 40px;
+    width: 60%;
+    margin: 0 auto;
+}
+#head .active{
+    background-color:black;
+    border-top:red 4px solid;
+    font:16px/38px PingFangSC-Regular,HelveticaNeue-Light,'Helvetica Neue Light','Microsoft YaHei',sans-serif;
+    text-align: center;
+    line-height:40px;
+}
+
+#head #head_center  div
+{
+  height: 40px;
+  width: 20%;
+  float: left;
+  font:16px/38px PingFangSC-Regular,HelveticaNeue-Light,'Helvetica Neue Light','Microsoft YaHei',sans-serif;
+  text-align: center;
+  line-height:40px;
+}
+#head #head_center a{
+    color: #ffff;
+}
+#center{
+    height: 1000px;
+}
+#center #center_center{
+    height: 1000px;
+    width: 60%;
+    margin: 0 auto;
+}
+#center #center_left{
+    height: 1000px;
+    width: 20%;
+    float: left;
+    background: url(../image/materials/chinese.jpg) no-repeat;
+}
+#center #center_left div{
+    height:125px;
+    border: 1px solid;
+    text-align: center;
+    font: 30px "楷体";
+    line-height: 125px;
+}
+#center #center_left .active{ background: black}
+#center #center_left a:hover{
+    font-size: 40px;
+    color: white;
+}
+#center .center_right
+{
+    height: 1000px;
+    width: 80%;
+    float: left;
+}
+#center .center_right #cr_top{
+    height: 400px;
+}
+#center .center_right #cr_top .cr_top_left{
+    height: 400px;
+    width: 60%;
+    float: left;
+}
+#center .center_right #cr_top .cr_top_left input{
+    width: 60px;
+    background-color: rgba(23, 194, 206, 0.555);
+    margin-left: 3%;
+}
+#center  .center_right .active{background: orange}
+#center .center_right #cr_top .cr_top_left img{
+    width: 100%;
+    height: 370px;
+    display: none;
+}
+
+#center .center_right #cr_top .cr_top_right{
+    height: 400px;
+    width: 40%;
+    float: left;
+}
+#center .center_right #cr_top .cr_top_right #crtr_top{
+    height: 150px;
+    padding: 4%;
+    margin-top:5px; 
+    border: 1px solid;
+}
+#center .center_right #cr_top .cr_top_right #crtr_bottom{
+    margin-top:40px;
+    height: 200px;
+    border:1px solid;
+    position: relative;
+}
+#center .center_right #cr_top .cr_top_right #crtr_bottom .crtrb_bottom
+{
+    height: 160px;
+    width: 100%;
+    position: absolute;
+    margin-bottom:0;
+    background: red; 
+    position: relative;
+    overflow: hidden;
+}
+#center .center_right #cr_top .cr_top_right #crtr_bottom .crtrb_bottom ul li
+{
+    width: 8.338%;
+    height: 160px;
+    list-style: none;
+    float: left;
+   
+}
+#center .center_right #cr_top .cr_top_right #crtr_bottom .crtrb_bottom ul 
+{
+    position: absolute;
+    width: 300%;
+    height: 160px;
+    left: 0;
+    top: 0;
+  
+}
+#center .center_right #cr_top .cr_top_right #crtr_bottom .crtrb_bottom img{
+    width: 100%;
+    height: 160px;
+    margin-left: 0%;
+}
+#center .center_right #cr_bottom{
+    height: 600px;
+}
+#center .center_right #cr_bottom #crb_top{
+   height: 300px;
+}
+#center .center_right #cr_bottom #crb_top div{
+    height: 300px;
+    width: 25%;
+    border: 1px solid;
+    float: left;
+}
+#center .center_right #cr_bottom #crb_top img
+{
+  height: 200px;
+  width: 60%;
+}
+#center .center_right #cr_bottom #crb_bottom{
+ height: 300px;
+}
+#center .center_right #cr_bottom #crb_bottom div{
+    height: 300px;
+    width: 25%;
+    border: 1px solid;
+    float: left;
+}
+#center .center_right #cr_bottom #crb_bottom img{
+    height: 200px;
+    width: 50%;
+
+}
+#Dcenter{
+    height: 1000px;
+}
+#Dcenter #Dcenter_center{
+    height: 1000px;
+    width: 60%;
+    margin: 0 auto; 
+}
+#Dcenter #Dcenter_center #Dcenter_center_top{
+    height: 100px;
+    width: 100%;
+    
+}
+#Dcenter #Dcenter_center #Dcenter_center_top .Dct_right{
+    width: 20%;
+    height: 100px;
+    text-align: center;
+    font:200% "楷体";
+    line-height: 100px;
+    float: left;
+    color: green;
+    border-bottom: 4px solid;
+    border-color:green; 
+}
+#Dcenter #Dcenter_center #Dcenter_center_top ul{
+    list-style:none;
+    height: 50px;
+    width: 80%; 
+    float: left; 
+    margin-top:50px;      
+}
+#Dcenter #Dcenter_center #Dcenter_center_top ul div{
+    width:12.5%;
+    height: 50px;
+    float: left;
+    color: #666666;
+    text-align: center;
+    line-height: 60px;
+    border-bottom: 4px solid;
+    border-color:green; 
+}
+#Dcenter #Dcenter_center #Dcenter_center_top .active{
+    border-right:4px solid;
+    border-left:4px solid;
+    border-top:4px solid;
+    border-bottom: none;
+    color: green;
+    font-size:18px;    
+    font-weight:bold; 
+}
+#Dcenter #Dcenter_center #Dcenter_center_bottom{
+    border: 2px solid;
+    height: 800px;
+    width: 100%;
+    border-top: none;
+}
+#Dcenter #Dcenter_center #Dcenter_center_bottom div{
+    height: 800px;
+    width: 100%;
+    display: none;
+}
+#Dcenter #Dcenter_center #Dcenter_center_bottom ul{
+    list-style: none;
+    height: 800px;
+    width: 100%;
+}
+#Dcenter #Dcenter_center #Dcenter_center_bottom ul li{
+    height: 400px;
+    width: 20%;
+    float: left;
+    text-align: center;
+    border: 1px solid;
+    border-top: none;
+}
+#Dcenter #Dcenter_center #Dcenter_center_bottom ul li img{
+    height: 250px;
+    width: 60%;
+}
+#footer .link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#footer .link a {
+    text-decoration: none;
+    color: rgb(104, 53, 53);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#copyright {
+    text-align: center;
+    margin-top: 20px;
+}

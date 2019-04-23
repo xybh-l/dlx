@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>东理淘-新闻网</title>
+    <link rel="stylesheet" href="css/schoolnews.css">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon" />
+    <script>
+        window.onload=function()
+        {
+            var oBct=document.getElementById('bcb_top');
+            var oDivt=oBct.getElementsByTagName('div');
+            var oBcb=document.getElementById('bcb_bottom');
+            var oDivb=oBcb.getElementsByTagName('div');
+            for(var i=0;i<oDivt.length;i++)
+            {
+                oDivt[i].index=i;
+                oDivt[i].onmouseover=function()
+                {
+                    for(var i=0;i<oDivt.length;i++)
+                    {
+                        oDivt[i].className='';
+                        oDivb[i].style.display='none';
+                    }
+                    this.className='active';
+                    oDivb[this.index].style.display='block';
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="headtop">
+        <div class="logo">
+            <img src="/image/logo4.png" alt="">
+        </div>
+        <div class="Live">
+            <div class="inline">
+                <a href="schoolnews.html">返回首页</a>
+                <a target="blank" href="http://news.ecut.edu.cn/main.htm">学校首页</a>
+                <a href=# onClick="this.style.behavior='url(#default#homepage)';this.setHomePage
+                ('http://study.lanwang.com');">设为首页</a>
+                <script language="JavaScript">
+                function bookmarkit(){window.external.addFavorite('http://www.aaa.com','')}
+                if (document.all)document.write('<a href="http://study.lanwang.com" onClick="bookmarkit()">将本站加入收藏夹</a>')
+                </script>
+                <a href="#" onclick="javascript:window.external.AddFavorite('http:'/'/study.lanwang.online','东理淘')"
+                    title="收藏本站到你的收藏夹">
+                    <font size="-1">收藏本站</font>
+                </a>
+                <a href="#">在线投稿</a>
+            </div>
+        </div>
+    </div>
+    <div id="head">
+        <div class="word">
+            <a href="news/list1.html"><span class="ptn_1">热门</span></a>
+            <a href="news/listx1.html"><span class="ptn_1">校级新闻</span></a>
+            <a href="news/listy1.html"><span class="ptn_1">院级新闻</span></a>
+            <a href="news/listt1.html"><span class="ptn_1">学校通知</span></a>
+            <a href="news/listj1.html"><span class="ptn_1">校园景象</span></a>
+        </div>
+    </div>
+    <div class="body">
+        <div class="center">
+            <div class="body_l">
+                <div id="bcb_top">
+                    <div class="active"> <a href="http://photo.sina.com.cn" target="black">聚焦</a></div>
+                    <div><a href="http://photo.sina.com.cn" target="black">独家</a></div>
+                    <div><a href="http://photo.sina.com.cn" target="black">策划</a></div>
+                    <div><a href="http://photo.sina.com.cn" target="black">现场</a></div>
+                    <div><a href="http://photo.sina.com.cn" target="black">风景</a></div>
+                </div>
+                <div id="bcb_bottom">
+                    <div style="display:block"><img src="image/pic_wxh/fengjing1.jpg"></div>
+                    <div><img src="image/pic_wxh/fengjing2.jpg" ></div>
+                    <div><img src="image/pic_wxh/fengjing3.jpg"></div>
+                    <div><img src="image/pic_wxh/fengjing4.jpg"></div>
+                    <div><img src="image/pic_wxh/fengjing5.jpg"></div>
+                </div>
+            </div>
+            <div class="p_middle">
+                <div class="b_bit">
+                    <div class="b_tname">要闻</div>
+                    <div id="b_time">
+                        <script>
+                            //这里代码多了几行，但是不会延迟显示，速度比较好，格式可以自定义，是理想的时间显示
+                            setInterval("fun(b_time)", 1);
+
+                            function fun(timeID) {
+                                var date = new Date(); //创建对象  
+                                var y = date.getFullYear(); //获取年份  
+                                var m = date.getMonth() + 1; //获取月份  返回0-11  
+                                var d = date.getDate(); // 获取日  
+                                var w = date.getDay(); //获取星期几  返回0-6   (0=星期天) 
+                                var ww = ' 星期' + '日一二三四五六'.charAt(new Date().getDay()); //星期几
+                                var h = date.getHours(); //时
+                                var minute = date.getMinutes() //分
+                                var s = date.getSeconds(); //秒
+                                var sss = date.getMilliseconds(); //毫秒
+                                if (m < 10) {
+                                    m = "0" + m;
+                                }
+                                if (d < 10) {
+                                    d = "0" + d;
+                                }
+                                if (h < 10) {
+                                    h = "0" + h;
+                                }
+
+
+                                if (minute < 10) {
+                                    minute = "0" + minute;
+                                }
+
+
+                                if (s < 10) {
+                                    s = "0" + s;
+                                }
+
+
+                                if (sss < 10) {
+                                    sss = "00" + sss;
+                                } else if (sss < 100) {
+                                    sss = "0" + sss;
+                                }
+
+
+                                document.getElementById(timeID.id).innerHTML = "北京时间:" + y + "-" + m + "-" + d + "   " +
+                                    h + ":" +
+                                    minute + ":" + s + "  " + ww;
+                                //document.write(y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s);  
+                            }
+                        </script> 
+                    </div>
+                </div>
+                <div class="artcletitle">
+                    <h1>
+                        <a target="_blank" href="index.html">东理淘:加紧制作中</a>
+                    </h1>
+                    <p>
+                        [
+                        <a target="_blank" href="#">前端布局设计中</a>
+                        <a target="_blank" href="#">后端架构设计中</a>
+                        ]
+                    </p>
+                    <h1>
+                        <a target="_blank" href="index.html">东理淘:加紧制作中</a>
+                    </h1>
+                    <p>
+                        [
+                        <a target="_blank" href="#">前端布局设计中</a>
+                        <a target="_blank" href="#">后端架构设计中</a>
+                        ]
+                    </p>
+                    <h1>
+                        <a target="_blank" href="index.html">东理淘:加紧制作中</a>
+                    </h1>
+                    <p>
+                        [
+                        <a target="_blank" href="#">前端布局设计中</a>
+                        <a target="_blank" href="#">后端架构设计中</a>
+                        ]
+                    </p>
+                    <h1>
+                        <a target="_blank" href="index.html">东理淘:加紧制作中</a>
+                    </h1>
+                    <p>
+                        [
+                        <a target="_blank" href="#">前端布局设计中</a>
+                        <a target="_blank" href="#">后端架构设计中</a>
+                        ]
+                    </p>
+                </div>
+
+            </div>
+            <div class="body_r">
+                <video width="400" height="350" controls autoplay>
+                    <source src="image/schoolnews/test.mp4" type="video/mp4" webkit-playsinline=”true”
+                        playsinline=”true” x5-playsinline=”true” x-webkit-airplay=”allow” controls=”“>
+                    <source src="movie.ogg" type="video/ogg">
+                    <source src="movie.webm" type="video/webm">
+                    您的浏览器不支持 video 属性。
+                </video>
+                <div class="txt">测试视频</div>
+            </div>
+            <div id="mod">
+                <div class="mod1">
+                    <div class="m1">
+                        <div class="tt">
+                            <h3> <span class="title" frag="标题"><a href="news/listx1.html" target="_blank"
+                                        rel="noopener noreferrer">校级新闻</a></span></h3>
+                        </div>
+                        <div class="con">
+                            <ul class="news_list">
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span></a>
+                                </div>
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span>
+                                </div>
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span>
+                                </div>
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span>
+                                </div>
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="m2">
+                        <div class="tt">
+                            <h3> <span class="title" frag="标题"><a href="news/listy1.html" target="_blank"
+                                        rel="noopener noreferrer">院级新闻</a></span></h3>
+                        </div>
+                        <div class="con">
+                            <ul class="news_list">
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span></a>
+                                </div>
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span>
+                                </div>
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span>
+                                </div>
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span>
+                                </div>
+                                <div class="bt">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                    <span class="news_time">2019-04-17</span>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mod2">
+                        <div class="m1">
+                            <div class="tt">
+                                <h3> <span class="title" frag="标题"><a href="news/listt1.html" target="_blank"
+                                            rel="noopener noreferrer">学校通知</a></span></h3>
+                            </div>
+                            <div class="con">
+                                <ul class="news_list">
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span></a>
+                                    </div>
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span>
+                                    </div>
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span>
+                                    </div>
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span>
+                                    </div>
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="m2">
+                            <div class="tt">
+                                <h3> <span class="title" frag="标题"><a href="news/listj1.html" target="_blank"
+                                            rel="noopener noreferrer">校园景象</a></span></h3>
+                            </div>
+                            <div class="con">
+                                <ul class="news_list">
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span></a>
+                                    </div>
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span>
+                                    </div>
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span>
+                                    </div>
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span>
+                                    </div>
+                                    <div class="bt">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">2019年4月17日新闻网创建中</a>
+                                        <span class="news_time">2019-04-17</span>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+                <div class="link">
+                    <a href="aboutus.html">关于我们</a>
+                    |
+                    <a href="contact_way.html">联系我们</a>
+                    |
+                    <a href="#">人才招聘</a>
+                    |
+                    <a href="#">商家入驻</a>
+                    |
+                    <a href="#">广告服务</a>
+                    |
+                    <a href="www.lanwang.online" title="qq空间">友情链接</a>
+                </div>
+            </div>
+            <div id="copyright">
+                © 2019 donglitao.cn 版权所有
+            </div>
+    </div>
+    </div>
+    <script>
+            var fnTextPopup = function (arr, options) {
+                // arr参数是必须的
+                if (!arr || !arr.length) {
+                    return;    
+                }
+                // 主逻辑
+                var index = 0;
+                document.documentElement.addEventListener('click', function (event) {
+                    var x = event.pageX, y = event.pageY;
+                    var eleText = document.createElement('span');
+                    eleText.className = 'text-popup';
+                    this.appendChild(eleText);
+                    if (arr[index]) {
+                        eleText.innerHTML = arr[index];
+                    } else {
+                        index = 0;
+                        eleText.innerHTML = arr[0];
+                    }
+                    // 动画结束后删除自己
+                    eleText.addEventListener('animationend', function () {
+                        eleText.parentNode.removeChild(eleText);
+                    });
+                    // 位置
+                    eleText.style.left = (x - eleText.clientWidth / 2) + 'px';
+                    eleText.style.top = (y - eleText.clientHeight) + 'px';
+                    // index递增
+                    index++;
+                });    
+            };
+            fnTextPopup(['富强', '民主', '文明', '和谐', '自由', '平等', '公正', '法治', '爱国', '敬业', '诚信', '友善']);
+            </script>
+             <script>
+                    var _hmt = _hmt || [];
+                    (function () {
+                        var hm = document.createElement("script");
+                        hm.src = "https://hm.baidu.com/hm.js?54a553e5465b6608228037bd7ebfb10c";
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(hm, s);
+                    })();
+                </script>
+   
+</body>
+
+</html>
