@@ -1,0 +1,240 @@
+* {
+
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    /*消除下划线*/
+}
+
+a:hover{
+    color:  rgb(141,0,0);
+    text-decoration-style: underline;
+}
+
+#headtop {
+    margin: 0 auto;
+    width: 100%;
+    height: 80px;
+	background: rgb(239,239,235);
+}
+
+#headtop .logo {
+	margin-left: 12%;
+    height: 38px;
+    width: 160px;
+}
+
+#headtop .logo img {
+    height: 80px;
+    width: 150px;
+}
+
+#headtop .headtop_midden{
+	text-align: center;
+}
+
+#headtop .Live {
+    float: right;
+	margin-right: 12%;
+    text-align: center;
+    font: 10px "微软雅黑";
+}
+
+#head {
+    width: 100%;
+    height: 45px;
+    margin: 0 auto;
+    border-radius: 5px 5px 5px 5px;
+    background: rgb(224, 18, 34);
+    border: yellow 1px solid;
+    font-weight: bold;
+}
+
+#head .word {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+}
+
+#head .word a {
+    width: 43px;
+    font-size: 16px;
+    line-height: 47px;
+    color: #ececec;
+    text-align: center;
+    flex: 1;
+	transition: all 0.3s linear;
+}
+
+#head .word a:hover {
+    font-size: 20px;
+	transition: all 0.3s linear;
+}
+#center{
+    height: 950px;
+    position: relative;
+}
+
+#center #center_top{
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+#center #center_top #center_top_center{
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+	line-height: 50px;
+	text-align: center;
+}
+#center #center_top #center_top_center #Anchor{
+	opacity: 0;
+	font-size: 22px;
+	border-radius: 50px;
+	background-color: rgba(142,245,160,1.00);
+	transition: all 0.3s linear;
+}
+
+#center #center_top #center_top_center #Anchor:hover{
+	opacity: 0;
+	font-size: 25px;
+	background-color: rgba(232,132,255,1.00);
+}
+
+#center #center_bottom{
+    height: 900px;
+    width: 100%;
+	background-image: none;/*给JS预留做接口*/
+}
+#center #center_bottom #center_bottom_center{
+    height: 900px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#center #center_bottom #center_bottom_center #cbc_left
+{
+    height: 850px;
+	margin-left: 2%;
+    width: 98%;
+    position: static;
+    top: 20px;
+}
+
+#center #center_bottom #center_bottom_center #cbc_left div
+{
+    margin-top: 10px;
+}
+
+/*
+	代码修改区开始
+*/
+
+#center #center_bottom #center_bottom_center #cbc_left .Selection_box_line{
+	opacity: 1;/*给JS做接口*/
+	padding: 5px;
+}
+
+#center #center_bottom #center_bottom_center #cbc_left .Selection_box_line .Selection_box{
+	background-size: 100% 100%;
+	width: 15%;
+	height: 150px;
+	padding: 5px;
+	margin: 25px 10px;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	transition: all 0.3s linear;
+	text-align: center;
+	float: left;
+}
+
+
+#M1,#M2,#M3,#M4,#M5,#M6{
+	background-image: url("../image/1.jpg");
+	background-size: contain;
+}
+
+#M7,#M8,#M9,#M10,#M11,#M12{
+	background-image: url("../image/2.jpg");
+	background-size: contain;
+}
+#M13,#M14,#M15,#M16,#M17,#M18{
+	background-image: url("../image/3.jpg");
+	background-size: contain;
+}
+#M19,#M20,#M21,#M22,#M23,#M24{
+	background-image: url("../image/4.png");
+	background-size: contain;
+}
+
+
+#center #center_bottom #center_bottom_center #cbc_left .Selection_box_line .Selection_box:hover{
+	box-shadow: 5px 8px 5px #ccc;
+	/*x的偏移量 y的偏移量 模糊程度*/
+	transition: all 0.3s linear;
+}
+
+#center #center_bottom #center_bottom_center #cbc_left .Selection_box_line .Selection_box h6{
+	width: 100%;
+	padding: 0px;
+	height: 35%;
+	border-radius: 20px;
+	font-size: 13px;
+	line-height: 25px;
+	background-color: rgba(255,255,255,0.60);
+}
+
+#center #center_bottom #center_bottom_center #cbc_left .Selection_box_line .Selection_box p{
+	width: 100%;
+	height: 25%;
+	padding-top: 5px;
+	border-radius: 20px;
+	background-color: rgba(156,255,171,0.6);
+	transition: all 0.3s linear;
+}
+
+#center #center_bottom #center_bottom_center #cbc_left .Selection_box_line .Selection_box p:hover{
+	background-color: rgba(232,197,198,0.6);
+	transition: all 0.3s linear;
+}
+
+/*
+	代码修改区结束
+*/
+
+#center #center_bottom #center_bottom_center #cbc_bottom{
+    height:50px;
+    width: 100%;
+    position: static;
+    bottom:0;
+    text-align: center;
+}
+
+#center #center_bottom #center_bottom_center #cbc_bottom span{
+    margin:10px;
+}
+
+#footer{
+	padding-top: 50px;
+	position: static;
+}
+
+#footer .link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#footer .link a {
+    text-decoration: none;
+    color: rgb(104, 53, 53);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#copyright {
+    text-align: center;
+    margin-top: 20px;
+}
