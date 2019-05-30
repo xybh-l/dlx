@@ -6,99 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>东理淘-学习资料</title>
+    <!-- <link type="text/css" rel ="stylesheet" href="Swiper/swiper-4.5.0/dist/css/swiper.min.css"> -->
+    <!-- <link type="text/css" rel ="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"> -->
     <link rel="stylesheet" href="css/L_materials.css">
     <link rel="icon" href="image/favicon.ico" type="image/x-icon" />
+    <link href="css/index1.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="css/index2.css" rel="stylesheet">
+    <!-- <script src="Swiper/swiper-4.5.0/dist/js/swiper.min.js"></script> -->
+    <script src="js/move2.js"></script>
     <script>
-        window.onload = function () {
-            var oHead = document.getElementById('head_center');
-            var oDiv = oHead.getElementsByTagName('div');
-            /* oDiv[2].onmouseover=function()
-             {
-             oDiv[2].className='active';
-             }*/
-            for (var i = 0; i < oDiv.length; i++) {
-                oDiv[i].onmouseover = function () {
-                    for (var i = 0; i < oDiv.length; i++) {
-                        oDiv[i].className = '';
-                    }
-                    this.className = 'active';
-                }
-                oDiv[i].onmouseout = function () {
-                    for (var i = 0; i < oDiv.length; i++) {
-                        for (var i = 0; i < oDiv.length; i++) {
-                            oDiv[i].className = '';
-                        }
-                    }
-                }
-            }
-            var oCCr = document.getElementById('center_left');
-            var oCDiv = oCCr.getElementsByTagName('div');
-
-            for (var i = 0; i < oCDiv.length; i++) {
-                oCDiv[i].onmouseover = function () {
-                    for (var i = 0; i < oCDiv.length; i++) {
-                        oCDiv[i].className = '';
-                    }
-                    this.className = 'active';
-                }
-                oCDiv[i].onmouseout = function () {
-                    for (var i = 0; i < oCDiv.length; i++) {
-                        oCDiv[i].className = '';
-                    }
-                }
-            }
-            var oCr = document.getElementById('cr_top');
-            var oBtn = oCr.getElementsByTagName('input');
-            var oImg = oCr.getElementsByTagName('img');
-            //alert('123');
+        /*window.onload = function () {
+            var oDiv = document.getElementById('ad');
+            var oBtn = oDiv.getElementsByTagName('input');
+            var oDiv1 = oDiv.getElementsByTagName('div');
             for (var i = 0; i < oBtn.length; i++) {
                 oBtn[i].index = i;
                 oBtn[i].onmouseover = function () {
                     for (var i = 0; i < oBtn.length; i++) {
                         oBtn[i].className = '';
-                        oImg[i].style.display = 'none';
+                        oDiv1[i].style.display = 'none';
                     }
                     this.className = 'active';
-                    oImg[this.index].style.display = 'block';
+                    oDiv1[this.index].style.display = 'block';
                 }
             }
-            var Crtr = document.getElementById('crtr_bottom');
-            var oUlc = Crtr.getElementsByTagName('ul')[0];
-            var aLic = Crtr.getElementsByTagName('li');
-            oUlc.innerHTML = oUlc.innerHTML + oUlc.innerHTML;
-            oUlc.style.width = aLic[0].offsetWidth * aLic.length + 'px';
-
-            function move() {
-                if (oUlc.offsetLeft < -oUlc.offsetWidth / 2) {
-                    oUlc.style.left = '0';
-                }
-                if (oUlc.offsetLeft > 0) {
-                    oUlc.style.left = -oUlc.offsetWidth / 2 + 'px';
-                }
-                oUlc.style.left = oUlc.offsetLeft - '2' + 'px';
-            }
-            var timer = setInterval(move, 30);
-            Crtr.onmouseover = function () {
-                clearInterval(timer);
-            }
-
-            Crtr.onmouseout = function () {
-                timer = setInterval(move, 30);
-            }
-            var oDct = document.getElementById('Dct_left');
-            var oDcb = document.getElementById('Dcenter_center_bottom');
-            var oDiv2 = oDct.getElementsByTagName('div');
-            var oDiv3 = oDcb.getElementsByTagName('div');
-            for (var i = 0; i < oDiv2.length; i++) {
-                oDiv2[i].index = i;
-                oDiv2[i].onmouseover = function () {
-                    for (var i = 0; i < oDiv2.length; i++) {
-                        oDiv2[i].className = '';
-                        oDiv3[i].style.display = 'none';
-                        //alert(oDct);
+        }*/
+        window.onload = function () {
+            var oDiv = document.getElementById('bbc_second_center');
+            var oBtn = oDiv.getElementsByTagName('span');
+            var oUl = oDiv.getElementsByTagName('ul')[0];
+            //var nowZindex=2;
+            //var spanZindex=3;
+            var now = 0;
+            var tim = null;
+            var speed = 0;
+            for (var i = 0; i < oBtn.length; i++) {
+                oBtn[i].index = i;
+                oBtn[i].onmouseover = function () {
+                    for (var i = 0; i < oBtn.length; i++) {
+                        now = this.index;
+                        tab();
+                        this.className = 'active';
                     }
-                    oDiv3[this.index].style.display = 'block';
-                    this.className = 'active';
+                }
+            }
+
+            function tab() {
+                for (var i = 0; i < oBtn.length; i++) {
+                    oBtn[i].className = '';
+                }
+                oBtn[now].className = 'active';
+                startMove(oUl, {
+                    top: -400 * now
+                });
+            }
+
+            function next() {
+                now++;
+                if (now == oBtn.length) {
+                    now = 0;
+                }
+                tab();
+            }
+            var timer = setInterval(next, 4000) {
+                oDiv.onmouseover = function () {
+                    clearInterval(timer);
+                }
+                oDiv.onmouseout = function () {
+                    timer = setInterval(next, 4000);
                 }
             }
         }
@@ -106,991 +82,348 @@
 </head>
 
 <body>
-    <!--头部-->
+    <!-- 整站通用的头部及导航条 -->
     <div id="header">
-        <div class="header_center">
-            <div id="header_center_left">
-                <a href="index.html"> <img src="image/pic_wxh/logo.png"></a>
-            </div>
-            <div id="header_center_right">
-                <input id="btn1" type="text">
-                <input id="btn2" type="button" value="搜索">
-                <div id="h_c_r_right">
-                    <a href="blank.html">我的书架</a>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" style="padding:0 0 0 15px;" href="http://study.lanwang.online"><img
+                            alt="Brand" style="max-width:130px;" src="image/logo4.png"></a>
                 </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://study.lanwang.online">首页 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li><a href="schoolnews.html">校园新闻</a></li>
+                        <li><a href="trade.html">交易平台</a></li>
+                        <li><a href="con_service.html">便民服务</a></li>
+                        <li class="active"><a href="L_materials.html">学习资料</a>
+                            <p class="line-top hidden-xs"></p>
+                        </li>
+                        <li><a href="notice.php">交流天地</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
-        </div>
+            <!-- /.container-fluid -->
+        </nav>
     </div>
-    <!--头部偏下-->
-    <div id="head">
-        <div id="head_center">
-            <div><a href="blank.html">全部作品</a></div>
-            <div><a href="blank.html">最新</a></div>
-            <div><a href="blank.html">排行</a></div>
-            <div><a href="blank.html">作家专区</a></div>
-            <div><a href="blank.html">完本</a></div>
-        </div>
-    </div>
-    <!--中部-->
-    <div id="center">
-        <div id="center_center">
-            <div id="center_left">
-                <div><a href="blank.html">文学作品</a></div>
-                <div><a href="blank.html">动漫杂刊</a></div>
-                <div><a href="blank.html">教育书籍</a></div>
-                <div><a href="blank.html">哲学</a></div>
-                <div><a href="blank.html">科学</a></div>
-                <div><a href="blank.html">体育</a></div>
-                <div><a href="blank.html">政治</a></div>
-                <div><a href="blank.html">军事</a></div>
+    <!-- 整站通用的头部及导航条 -->
+    <!-- 网站中间部分 -->
+    <div id='body_center'>
+        <div id='body_center_center'>
+            <!-- 中间第一段 -->
+            <div id='bcc_first'>
+                <div id='bcc_first_icon'>
+                </div>
+                <p>
+                    东理淘校园综合平台即将上线，我们将提供书籍资料等资源分享渠道，敬请大家关注！
+                </p>
             </div>
-            <div class="center_right">
-                <div id="cr_top">
-                    <div class="cr_top_left">
-                        <a href="blank.html"><img src="image/pic_wxh/ac.jpg" style="display:block"></a>
-                        <a href="blank.html"><img src="image/pic_wxh/ac2.png"></a>
-                        <a href="blank.html"><img src="image/pic_wxh/ac3.jpg"></a>
-                        <a href="blank.html"><img src="image/pic_wxh/ac4 .jpg"></a>
-                        <a href="blank.html"><img src="image/pic_wxh/ac5.jpg"></a>
-                        <a href="blank.html"><img src="image/pic_wxh/ac6.jpg"></a>
-                        <input type="button" value="picture1" class='active'>
-                        <input type="button" value="picture2">
-                        <input type="button" value="picture3">
-                        <input type="button" value="picture4">
-                        <input type="button" value="picture5">
-                        <input type="button" value="picture6">
+            <!--中间第二段  -->
+            <div id='bbc_second'>
+                <div id='bbc_second_left'>
+                    <div><img src="image/pic_wxh/new_len1.png" height="70px" width="130px"></div>
+                    <div><img src="image/pic_wxh/new_len2.png" height="70px" width="130px"></div>
+                    <div><img src="image/pic_wxh/new_len3.png" height="70px" width="130px"></div>
+                    <div><img src="image/pic_wxh/new_len4.png" height="70px" width="130px"></div>
+                    <div><img src="image/pic_wxh/new_len5.jpg" height="70px" width="130px"></div>
+                </div>
+                <div id='bbc_second_center'>
+                    <ul id='bbcsc_top'>
+                        <li style="display: block"><a href="#"><img src="image/pic_wxh/new_len1.png" width="750px"
+                                    height="400px"></a></li>
+                        <li><a href="#"><img src="image/pic_wxh/newlen6.jpg" width="750px" height="400px"></a></li>
+                        <li><a href="#"><img src="image/pic_wxh/newlen8.jpg" width="750px" height="400px"></a></li>
+                        <li><a href="#"><img src="image/pic_wxh/new_len4.png" width="750px" height="400px"></a></li>
+                        <li><a href="#"><img src="image/pic_wxh/new_len5.jpg" width="750px" height="400px"></a></li>
+                        <li><a href="#"><img src="image/pic_wxh/commodity6.jpg" width="750px" height="400px"></li>
+                    </ul>
+                    <div id='bbcsc_bottom'>
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <div class="cr_top_right">
-                        <div id="crtr_top">
-                            <p>
-                                <h1>最近动态</h1>
-                            </p>
-                            <ul>
-                                <li><a href="blank.html">新经典周年庆，满100减50</a></li>
-                                <li><a href="blank.html">东理淘出新品啦！</a></li>
-                            </ul>
+                </div>
+                <div id='bbc_second_right'>
+                    <div id='bbcsr_first'>
+                        <div><img src="image/pic_wxh/tubiao1.png" height="50px" width="50px"></div>
+                        <div><img src="image/pic_wxh/tubiao2.png" height="50px" width="50px"></div>
+                        <div><img src="image/pic_wxh/tubiao3.png" height="50px" width="50px"></div>
+                        <div><img src="image/pic_wxh/tubiao4.png" height="50px" width="50px"></div>
+                        <div><img src="image/pic_wxh/tubiao5.png" height="50px" width="50px"></div>
+                    </div>
+                    <div id='bbcsr_second'>
+                        <div id='bbcsr_second_top'>
+                            邮件订阅
                         </div>
-                        <div id="crtr_bottom">
-                            <p>
-                                <h1>分享书籍</h1>
-
-                            </p>
-                            <div class="crtrb_bottom">
-                                <ul>
-                                    <li><a href="blank.html"><img src="image/pic_wxh/book.jpg"></a></li>
-                                    <li><a href="blank.html"><img src="image/pic_wxh/book2.jpg"></a></li>
-                                    <li><a href="blank.html"><img src="image/pic_wxh/book3.jpg"></a></li>
-                                    <li><a href="blank.html"><img src="image/pic_wxh/book4.jpg"></a></li>
-                                    <li><a href="blank.html"><img src="image/pic_wxh/book5.jpg"></a></li>
-                                    <li><a href="blank.html"><img src="image/pic_wxh/book6.jpg"></a></li>
-                                </ul>
+                        <div id='bbcsr_second_bottom'>
+                            订阅精彩内容
+                            <div>
+                                <input type="text" placeholder="your@email.com">
+                                <input class="button" type="button" value="订阅">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bbcsr_tird">
+                        <div id="bbcsr_tird_top">
+                            热门标签
+                        </div>
+                        <div id="bbcsr_tird_bottom">
+                            <div id="bbcsrtb_left">
+                                <div style="background: cadetblue">织梦模板（20）</div>
+                                <div style="background: rosybrown">dedecms模板（113）</div>
+                                <div style="background: darkcyan">网络游戏源码（95）</div>
+                                <div style="background: darkkhaki">dececms（63）</div>
+                                <div style="background: darkseagreen">网页游戏源码（52）</div>
+                                <div style="background: salmon">帝国cms源码（46）</div>
+                                <div style="background:deepskyblue">dedecms源码（37）</div>
+                                <div style="background:gold">Discuz（31）</div>
+                                <div style="background: deeppink">帝国源码（30）</div>
+                                <div style="background:deepskyblue">棋牌游戏源码（30）</div>
+                            </div>
+                            <div id="bbcsrtb_right">
+                                <div style="background:deepskyblue">破解版（115）</div>
+                                <div style="background: darkkhaki">游戏源码（103）</div>
+                                <div style="background: cadetblue">微信源码（67）</div>
+                                <div style="background: salmon">92GAME源码（53）</div>
+                                <div style="background: deeppink">织梦源码（48）</div>
+                                <div style="background: rosybrown">安卓（41）</div>
+                                <div style="background: darkcyan">源码（34）</div>
+                                <div style="background:deepskyblue">手机游戏源码（31）</div>
+                                <div style="background:gold">手游源码（30）</div>
+                                <div style="background: darkseagreen">小程序源码（29）</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="cr_bottom">
-                    <div id="crb_top">
-                        <div>
-                            <a title="债务危机：《原则》作者、桥水创始人瑞.达利欧新作，桥水44年危机应对经验公开。" href="blank.html"><img src="image/pic_wxh/newbook.png"></a>
-                            <br>
-                            <b>书名：债务危机：《原则》</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
+            </div>
+            <!-- 中间第三段 -->
+            <div id='bbc_tird'>
+                <div id='bbc_trid_left'>
+                    <div id='bbctl_1'>
+                        <div id="bbctl_1_top">
+                            热门排行
                         </div>
-                        <div>
-                            <a title="镖人系列作品集（套装全5册）" href="blank.html"><img src="image/pic_wxh/newbook2.png"></a>
-                            <br>
-                            <b>书名：镖人系列作品集（套装全5册）</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </div>
-                        <div>
-                            <a title="棋王（阿城作品典藏2019新版）" href="blank.html"><img src="image/pic_wxh/newbook3.png"></a>
-                            <br>
-                            <b>书名：棋王（阿城作品典藏2019新版）</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </div>
-                        <div>
-                            <a title="露易丝.海：心理的伤,身体知道" href="blank.html"><img src="image/pic_wxh/newbook4.png"></a>
-                            <br>
-                            <b>书名：露易丝.海：心理的伤,身体知道</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
+                        <div id="bbctl_1_bottom">
+                            <ul>
+                                <li>
+                                    <p>1. 2018最新小姐威客程序源码附带完整安装视频教程 评论(26) 319赞</p>
+                                </li>
+                                <li>
+                                    <p>2. 2017最新PHP版站群全自动泛解析群程序附6000W关键词 评论(6) 74赞</p>
+                                </li>
+                                <li>
+                                    <p>3. 南方CSS软件 初学入门精通 有声视频教程大全 评论(16) 77赞</p>
+                                </li>
+                                <li>
+                                    <p>4. 2017最新PHP版站群全自动泛解析群程序附6000W关键词 评论(6) 74赞</p>
+                                </li>
+                                <li>
+                                    <p>5. 2017最新PHP版站群全自动泛解析群程序附6000W关键词 评论(6) 74赞</p>
+                                </li>
+                                <li>
+                                    <p>6. 百万淘客站群4.0商业破解版下载，淘金点模式，泛目录模式 评论(4) 32赞</p>
+                                </li>
+                                <li>
+                                    <p>7. 代理IP提取网站源码，DEDECMS内核，代理自助提取系统 评论(2) 45赞</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div id="crb_bottom">
-                        <div>
-                            <a title="数学大冒险（全10册）" href="blank.html"><img src="image/pic_wxh/newbook5.png"></a>
-                            <br>
-                            <b>书名：数学大冒险（全10册）</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
+                    <div id="bbctl_2">
+                        <div id="bbctl_1_top">
+                            最新文章
                         </div>
-                        <div>
-                            <a title="中国幼儿园拼音小词典" href="blank.html"><img src="image/pic_wxh/newbook6.png"></a>
-                            <br>
-                            <b>书名：中国幼儿园拼音小词典 </b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </div>
-                        <div>
-                            <a title="我妈妈的手提包" href="blank.html"><img src="image/pic_wxh/newbook7.png"></a>
-                            <br>
-                            <b>书名：我妈妈的手提包 </b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </div>
-                        <div>
-                            <a title="华杉讲透《大学中庸》" href="blank.html"><img src="image/pic_wxh/newbook8.png"></a>
-                            <br>
-                            <b>书名：华杉讲透《大学中庸》 </b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
+                        <div id="bbctl_1_bottom">
+                            <ul>
+                                <li>
+                                    <p><a>1.2018最新小姐威客程序源码附带完整安装视频教程</a></p>
+                                </li>
+                                <li>
+                                    <p><a>2. 2017最新PHP版站群全自动泛解析群程序附6000W关键词</a></p>
+                                </li>
+                                <li>
+                                    <p><a>3. 南方CSS软件 初学入门精通 有声视频教程大全</a></p>
+                                </li>
+                                <li>
+                                    <p><a>4. 2017最新PHP版站群全自动泛解析群程序附6000W关键词</a></p>
+                                </li>
+                                <li>
+                                    <p><a>5. 2017最新PHP版站群全自动泛解析群程序附6000W关键词</a></p>
+                                </li>
+                                <li>
+                                    <p><a>6. 百万淘客站群4.0商业破解版下载，淘金点模式，泛目录模式</a></p>
+                                </li>
+                                <li>
+                                    <p><a>7. 代理IP提取网站源码，DEDECMS内核，代理自助提取系统</a></p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--中部以下-->
-    <div id="Dcenter">
-        <div id="Dcenter_center">
-            <div id="Dcenter_center_top">
-                <div class="Dct_right">
-                    <h>独家特供</h>
-                </div>
-                <ul id="Dct_left">
-                    <li>
-                        <div class="active">文艺</div>
-                    </li>
-                    <li>
-                        <div>小说</div>
-                    </li>
-                    <li>
-                        <div>青春励志</div>
-                    </li>
-                    <li>
-                        <div>社科</div>
-                    </li>
-                    <li>
-                        <div>经管</div>
-                    </li>
-                    <li>
-                        <div>生活</div>
-                    </li>
-                    <li>
-                        <div>教育</div>
-                    </li>
-                    <li>
-                        <div>电子书</div>
-                    </li>
-                </ul>
-            </div>
-            <div id="Dcenter_center_bottom"  >
+                    <div id="bbctl_3">
+                        <div id="bbctl_3_top">
+                            热门书籍
+                        </div>
+                        <div id="bbctl_3_bottom">
+                            <div id="bbctl_3b_top">
+                                <div><a href="#"><img src="image/pic_wxh/wenyi.jpg" width="140px" height="160px"></a>
+                                    <p></p>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/wenyi2.jpg" width="140px" height="160px"></a>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/wenyi3.jpg" width="140px" height="160px"></a>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/wenyi4.jpg" width="140px" height="160px"></a>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/wenyi5.jpg" width="140px" height="160px"></a>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/wenyi6.jpg" width="140px" height="160px"></a>
+                                </div>
+                            </div>
+                            <div id="bbctl_3b_bottom">
+                                <div><a href="#"><img src="image/pic_wxh/wenyi7.jpg" width="140px" height="160px"></a>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/wenyi8.png" width="140px" height="160px"></a>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/wenyi9.jpg" width="140px" height="160px"></a>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/wenyi10.png" width="140px" height="160px"></a>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/article4.jpg" width="140px" height="160px"></a>
+                                </div>
+                                <div><a href="#"><img src="image/pic_wxh/article3.jpg" width="140px" height="160px"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div style="display:block">
-                    <ul id="Dcb1">
-                        <li>
-                            <img src="image/pic_wxh/wenyi.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/wenyi2.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/wenyi3.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/wenyi4.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/wenyi5.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/wenyi6.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/wenyi7.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/wenyi8.png">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/wenyi9.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/wenyi10.png">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                    </ul>
                 </div>
-                <div>
-                    <ul id="Dcb2">
-                        <li>
-                            <img src="image/pic_wxh/article.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/article2.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/article3.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/article4.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/article5.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/article6.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/article7.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/article8.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/article9.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/article10.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul id="Dcb3">
-                        <li>
-                            <img src="image/pic_wxh/qing.png">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/qing2.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/qing3.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/qing4.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/qing5.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/qing6.gif">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/qing7.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/qing8.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/qing9.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/qing10.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul id="Dcb4">
-                        <li>
-                            <img src="image/pic_wxh/sk.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/sk2.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/sk3.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/sk4.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/sk5.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/sk6.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/sk7.png">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/sk8.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/sk9.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/sk10.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul id="Dcb5">
-                        <li>
-                            <img src="image/pic_wxh/jg.png">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/jg2.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/jg3.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/jg4.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/jg5.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/jg6.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/jg7.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/jg8.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/jg9.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/jg10.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul id="Dcb6">
-                        <li>
-                            <img src="image/pic_wxh/life.png">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/life2.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/life3.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/life4.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/life5.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/life6.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/life7.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/life8.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/life9.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/life10.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul id="Dcb7">
-                        <li>
-                            <img src="image/pic_wxh/education.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/education2.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/education3.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/education4.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/education5.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/education6.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/education7.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/education8.png">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/education9.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/education10.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul id="Dcb8">
-                        <li>
-                            <img src="image/pic_wxh/electronic.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/electronic2.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/electronic3.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/electronic4.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/electronic5.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/electronic6.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/electronic7.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/electronic8.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/electronic9.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                        <li>
-                            <img src="image/pic_wxh/electronic10.jpg">
-                            <br>
-                            <b>书名：xxx</b>
-                            <br>
-                            <b>分享人ID：xxxxxx</b>
-                            <br>
-                            <h3><a href="blank.html">和TA联系</a></h3>
-                        </li>
-                    </ul>
+                <div id='bbc_trid_right'>
+                    <div id="bbc_trid_right_1">
+                        <div id="bbctr1_top">
+                            <p>猜你喜欢</p>
+                        </div>
+                        <div id="bbctr1_bottom">
+                            <div>
+                                <a>微信小程序观看视频打赏源码 2018-06-08</a>
+                            </div>
+                            <div>
+                                <a>微信小程序观看视频打赏源码 2018-06-08</a>
+                            </div>
+                            <div>
+                                <a>微信小程序观看视频打赏源码 2018-06-08</a>
+                            </div>
+                            <div>
+                                <a>微信小程序观看视频打赏源码 2018-06-08</a>
+                            </div>
+                            <div>
+                                <a>微信小程序观看视频打赏源码 2018-06-08</a>
+                            </div>
+                            <div>
+                                <a>微信小程序观看视频打赏源码 2018-06-08</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='bbc_trid_right_2'>
+                        <div id="bbctr2_top">
+                            网站统计
+                        </div>
+                        <div id="bbctr2_bottom">
+                            <p>文章总数：2888 篇</p>
+                            <p>评论数目：2902条</p>
+                            <p>建站时间：2018-3-20</p>
+                            <p>最后更新：2019-5-29</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <audio autoplay="autoplay" controls="controls" loop="loop" preload="auto"
-        src="music/music.mp3">
-        你的浏览器版本太低，不支持audio标签
-        </audio>
-        <div id="footer">
-                <div class="link">
-                    <a href="aboutus.html">关于我们</a>
-                    |
-                    <a href="contact_way.html">联系我们</a>
-                    |
-                    <a href="blank.html">人才招聘</a>
-                    |
-                    <a href="blank.html">商家入驻</a>
-                    |
-                    <a href="blank.html">广告服务</a>
-                    |
-                    <a href="www.lanwang.online" title="qq空间">友情链接</a>
+
+    </div>
+    <!-- 网站中间部分 -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>常用工具</h4>
+                        <ul>
+                            <li><a href="#"">交易平台</a></li>
+                                <li><a href=" #">图片下载</a></li>
+                            <li><a href="#">资料下载</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>快速链接</h4>
+                        <ul>
+                            <li><a href="express.html">快递代取</a></li>
+                            <li><a href="#">留言板</a></li>
+                            <li><a href="#">公告栏</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="#">关于我们</a></li>
+                            <li><a href="#">服务协议</a></li>
+                            <li><a href="javascript:AddFavorite('东篱下-校园综合服务平台','http://study.lanwang.com/');">收藏本站</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-wechat">
+                        <img class="img-responsive" src="image/index/LW_WX.jpg">
+                        <p>微信<sapn class="hidden-sm">号:</sapn>dlx</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 footer-item footer-item-last">
+                    <div class="footer-contact">
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-phone.png">17687974147</h2>
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-qq.png">1353433900</h2>
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-mob.png">17687974147</h2>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Copyright © 2019 dlt.com All Rights Reversed. 东篱下 <a target="_blank" href="#">赣ICP备18008511号</a>
+                    </p>
+
+                    <div style="width:300px;margin:0 auto; padding:20px 0; text-align: center;">
+                        <a target="_blank" href="#"
+                            style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                            <img src="http://www.clantrip.com/static/images/ghs.png" style="float:left;" />
+                            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#fafafa;">
+                                赣ICP备18008511号</p>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div id="copyright">
-                © 2019 donglitao.cn 版权所有
-            </div>
+        </div>
     </div>
-    <script>
-            var _hmt = _hmt || [];
-            (function () {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?54a553e5465b6608228037bd7ebfb10c";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
+    <!-- 通用页脚 -->
 </body>
-
-</html>
