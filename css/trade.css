@@ -137,7 +137,7 @@ body {
 
 
 #ad {
-    width: 1200px;
+    width: 75%;
     height: 400px;
 	padding-left: 8%;
     margin-top:20px; 
@@ -156,10 +156,10 @@ body {
 
 #ad #ad_bottom {
     height: 20px;
-    width: 180px;
+    width: 16.5%;
     position: absolute;
     bottom: 20px;
-    left: 55%;
+    left: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -169,10 +169,10 @@ body {
 
 #ad span {
     display: block;
-    margin-left: 12px;
+    margin-left: 6.5%;
     margin-top: 2px;
     height: 16px;
-    width: 16px;
+    width: 9%;
     border-radius: 8px;
     float: left;
     text-align: center;
@@ -190,28 +190,33 @@ body {
 }
 
 #ms {
-    width: 1200px;
+    width: 75%;
     height: auto;
 	padding-left: 8%;
 	position: relative;
 }
 
 #ms .ms_top {
-    width: 1200px;
+    width: 100%;
     height: 55px;
     background-color: rgba(255,201,66,1.00);
-    background-size: 1200px 55px;
+    background-size: 75% 55px;
     line-height: 55px;
     display: flex;
 	border-radius: 50px;
 }
 
-#ms .ms_top span {
-    margin: 20px 30px;
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 210px;
+#ms .ms_top ul{
+	width: 100%;
+}
+
+#ms .ms_top li{
+	list-style: none;
+	font-weight: bold;
     flex: 1;
+	font-size: 25px;
+	float: left;
+	padding-left: 17.5%;
 }
 
 #ms .ms_top a {
@@ -225,7 +230,7 @@ body {
 }
 
 #ms .ms_body {
-    width: 1200px;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     display: flex;
@@ -237,15 +242,16 @@ body {
 }
 
 #ms .ms_body ul {
-	width: 1200px;
-    height: 300px;
+	width: 100%;
+    height: 32%;
     list-style: none;
     display: flex;
     background: white;
 }
 
 #ms .ms_body ul li{
-	width: 200px;
+	width: 16.6%;
+	height: 100%;
 	margin: 5px;
     flex: 1;
 	border: 1px solid #cccccc;
@@ -264,14 +270,14 @@ body {
 #ms .ms_body ul li .UserName{
 	font-size: 16px;
 	position: relative;
-	left: 10%;
+	left: 7.5%;
 }
 
 #ms .ms_body ul li .CreditMark{
 	width: auto;
-	height: 20px;
+	height: 4%;
 	position: relative;
-	left: 20%;
+	left: 35%;
 }
 
 #ms .ms_body ul a {
@@ -281,29 +287,29 @@ body {
 }
 
 #ms .ms_body ul a img {
-    width: 130px;
-    height: 130px;
-    margin-left: 20px;
-    margin-top: 10px;
+    width: 80%;
+    height: 45%;
+    margin-left: 10%;
+    margin-top: 5%;
 }
 
 .yuan {
     color: #ff4400;
     font-size: 10px;
     /*最小字体*/
-    margin-left: 10px;
+    margin-left: 7.5%;
 }
 
 .price {
     color: #ff4400;
     font-weight: bold;
-    margin-left: 5px;
+    margin-left: 3.75%;
 }
 
 .want{
 	font-size: 12px;
 	position: relative;
-	left: 40%;
+	margin-left: 27.5%;
 }
 
 #ms .ms_body ul a p {
@@ -314,7 +320,7 @@ body {
 
 #ms .ms_body ul a #footer {
     text-margin: center;
-    width: 1200px;
+    width: 75%;
     height: 300;
     padding-top: 30px;
     margin: 0 auto;

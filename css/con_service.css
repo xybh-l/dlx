@@ -53,6 +53,8 @@ body {
     margin: 0 auto;
 }
 .function {
+    text-align: center;
+    font-size: 20px;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 200px;

@@ -57,9 +57,10 @@ if ($result = mysql_fetch_array($check_query)) {
     //登录成功
     $_SESSION['username'] = $username;
     $_SESSION['userid'] = $result['id'];
-    echo $username, ' 欢迎你！进入 <a href="admin.php">管理页面</a><br />';
-    echo '点击此处 <a href="login.php?action=logout">注销</a> 登录！<br />';
-    exit;
+    // echo $username, ' 欢迎你！进入 <a href="admin.php">管理页面</a><br />';
+    // echo '点击此处 <a href="login.php?action=logout">注销</a> 登录！<br />';
+    // exit;
+    header("location:http://study.lanwang.online/trade.html");
 } else {
     exit('登录失败！点击此处 <a href="javascript:history.back(-1);">返回</a> 重试');
 }

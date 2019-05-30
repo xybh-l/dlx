@@ -11,15 +11,15 @@ a {
 }
 
 #body_center{
-    width: 1920px;
+    width: 100%;
 }
 #body_center_center{
-    height: 1840px;
-    width: 1200px;
-    margin-left:280px; 
+    height: 1680px;
+    width: 80%;
+    margin:0 auto; 
 }
 #bcc_first{
-    width: 1200px;
+    width: 100%;
     height: 40px;
     background:wheat;
 }
@@ -33,12 +33,12 @@ a {
 }
 #bcc_first p{
     height: 40px;
-    width: 1120px;
+    width: 95%px;
     margin-left:20px;
     line-height: 40px;
 }
 #bbc_second{
-    width: 1200px;
+    width: 100%;
     height: 600px;
     background: white;
 }
@@ -46,20 +46,19 @@ a {
 {
     margin-top:40px; 
     float: left;
-    width: 150px;
+    width: 20%;
     height: 400px;
 }
 #bbc_second_left div{
     height: 70px;
-    width: 130px;
+    width: 100%;
     float: left;
-    margin-left: 10px;
     margin-top: 10px; 
 }
 #bbc_second_center
 {
     float: left;
-    width: 750px;
+    width: 60%;
     height: 400px;
     margin-top:50px;
     position: relative;
@@ -67,14 +66,14 @@ a {
 }
 #bbcsc_top{
     height: 400px;
-    width: 750px;
+    width: 100%;
     position: relative;
 }
 
 #bbcsc_bottom
 {
     height: 20px;
-    width: 180px;
+    width: 30%;
     position: absolute;
     top: 370px;
     left: 270px;
@@ -87,15 +86,15 @@ a {
 #bbcsc_top li{
     list-style: none;
     height: 400px;
-    width: 750px;
+    width: 100%;
     float: left;
 }
 #bbcsc_bottom span{
     display: block;
-  margin-left:12px; 
+  margin-left:6%; 
     margin-top: 2px;
     height: 16px;
-    width: 16px;
+    width: 10%;
     border-radius:8px ; 
     float: left;
     text-align: center;
@@ -109,12 +108,12 @@ a {
 #bbc_second_right
 {
     float: left;
-    width: 300px;
+    width: 20%;
     height: 600px;
    
 }
 #bbcsr_first{
-    width: 300px;
+    width: 100%;
     height: 50px;
     float: left;
     margin-top: 10px;
@@ -122,14 +121,14 @@ a {
 }
 #bbcsr_first div{
 float: left;
-height: 50px;
-width: 50px;
+height: 33%;
+width: 16%;
 margin-left: 5px;
 background: white;
 border-radius: 5px;
 }
 #bbcsr_second{
-    width: 300px;
+    width: 100%;
     height: 90px;;
     background: white;
     margin-top: 80px;
@@ -140,33 +139,33 @@ border-radius: 5px;
     font-size: 12px;
     color: green;
     height: 20px;
-    width: 280px;
+    width: 94%;
     position: absolute;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 3%;
+    margin-top: 3%;
     border-bottom:1px solid green; 
    
 }
 #bbcsr_second_bottom{
     height: 40px;
-    width: 280px;
+    width: 94%;
    position: absolute;
-   margin-left: 10px;
+   margin-left: 3%;
    margin-top: 40px
 }
 #bbcsr_second_bottom div{
-    width: 280px;
+    width: 94%;
     bottom: 2px;
 }
 #bbcsr_tird{
     height: 300px;
-    width: 300px;
+    width: 100%;
     margin-top: 10px;
 }
 #bbcsr_tird_top{
     height: 40px;
-    width: 280px;
-    margin-left:10px;
+    width: 94%;
+    margin-left:3%;
     margin-top: 20px;
    line-height: 40px;
    color: green;
@@ -175,47 +174,49 @@ border-radius: 5px;
 }
 #bbcsr_tird_bottom{
     height: 350px;
-    width: 280px;
-    margin-left: 10px;
-    margin-top: 10px;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 3%;
 }
 #bbcsrtb_left{
     height: 350px;
-    width: 138px;
+    width: 46%;
     float: left;
 }
 #bbcsrtb_left div{
     height: 30px;
-    width: 138px;
+    width: 100%;
     margin-top:4px;
+    font-size: 10px;
     color: white;
 }
 #bbcsrtb_right{
     height: 350px;
-    width: 138px;
+    width: 46%;
    float: right;
     margin-top: 0px;
     margin-right: 0px;
 }
 #bbcsrtb_right div{
     height: 30px;
-    width: 138px;
+    width: 100%;
     margin-top:4px;
     color: white;
+    font-size: 10px;
 }
 #bbc_tird{
-    width: 1200px;
+    width: 80%;
     height: 1200px;
    
 }
 #bbc_tird #bbc_trid_left{
-    width: 900px;
+    width: 75%;
     height: 1200px;
     float: left;
     position: relative;
 }
 #bbctl_1{
-    width: 860px;
+    width: 100%;
     height: 300px;
    
     position: absolute;
@@ -224,10 +225,10 @@ border-radius: 5px;
     position: relative;
 }
 #bbctl_1_top{
-    width: 840px;
+    width: 95%;
     height: 50px;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 1%;
     position: absolute;
     line-height: 50px;
     background: white;
@@ -237,38 +238,38 @@ border-radius: 5px;
 }
 #bbctl_1_bottom{
     height: 220px;
-    width: 840px;
+    width: 95%;
     position: absolute;
     margin-top:70px; 
-    margin-left:10px; 
+    margin-left:1%; 
     background: white;
 }
 #bbctl_1_bottom ul{
  list-style: none;
 }
 #bbctl_2{
-    width: 860px;
+    width: 100%;
     height: 300px;
     position: absolute;
     margin-top:10px;
-    margin-left: 18px; 
+    margin-left: 2%; 
     position: relative;
 }
 
 #bbctl_3{
-    width: 860px;
+    width: 100%;
     height: 400px;
    
     position: absolute;
     margin-top:10px;
-    margin-left: 18px; 
+    margin-left: 2%; 
     position: relative;
 }
 #bbctl_3_top{
-    width: 840px;
+    width: 95%;
     height: 50px;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 1%;
     position: absolute;
     line-height: 50px;
     background: white;
@@ -278,7 +279,7 @@ border-radius: 5px;
 }
 #bbctl_3_bottom{
     height: 320px;
-    width: 840px;
+    width: 95%;
     position: absolute;
     margin-top:70px; 
     margin-left:10px; 
@@ -287,77 +288,81 @@ border-radius: 5px;
 #bbctl_3b_top
 {
     height: 160px;
-    width: 840px;
+    width: 100%;
 }
 #bbctl_3b_top div{
     height: 160px;
-    width: 140px;
+    width: 16%;
     border: 1px solid;
     float: left;
 }
 #bbctl_3b_bottom
 {
     height: 160px;
-    width: 840px;
+    width: 100%;
 }
 #bbctl_3b_bottom div{
     height: 160px;
-    width: 140px;
+    width: 16%;
     border: 1px solid;
     float: left;
 }
 #bbc_tird #bbc_trid_right{
     height: 1200px;
-    width: 300px;
+    width: 25%;
     float: right;
 }
 #bbc_trid_right_1{
     height: 500px;
-    width: 300px;
+    width: 100%;
     background: white;
     position: relative;
 }
 #bbctr1_top {
     height: 50px;
-    width: 280px;
+    width: 94%;
     position: absolute;
     margin-top :10px;
-    margin-left:10px;
-    font-size: 20px;
+    margin-left:3%;
+    font-size: 25px;
     color: green;
     border-bottom:1px solid green;
 }
 #bbctr1_bottom{
     height: 430px;
-    width: 280px;
-    margin-left: 10px;
+    width: 94%;
+    margin-left: 3%;
     position: absolute;
     margin-top: 65px;
+    font-size: 10px;
 }
 #bbctr1_bottom div{
-    width: 280px;
+    width: 100%;
     height: 70px;
     line-height: 70px;
     position: relative;
     border-bottom:1px solid green; 
 }
 #bbc_trid_right_2{
-    width: 300px;
+    width: 100%;
     height: 150px;
     background:white; 
     margin-top:10px; 
 }
 #bbctr2_top{
     height: 30px;
-    width: 280px;
+    width: 94%;
     
     line-height: 30px;
     color: green;
-    font-size: 10px;
+    font-size: 20px;
     border-bottom:1px solid green; 
 }
 #bbctr2_bottom{
     height: 120px;
-    width: 280px;
-    font-size: 10px;
+    width: 94%;
+    
+}
+#bbctr2_bottom div{
+    font-size: 20px;
 }
