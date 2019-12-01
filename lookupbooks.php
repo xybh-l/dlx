@@ -8,8 +8,9 @@ if(isset($_POST["submit"]) && $_POST["submit"] == "查询书籍")
     }
     else
     {
-        $link = mysqli_connect('localhost', 'root', 'root', 'lostthing');
-        mysqli_query($link,"set names 'utf-8'");
+        mysql_connect("localhost","root","root");
+        mysql_select_db("world");
+        mysql_query("set names 'utf-8'");
         $sql = "select bookname from books where bookname = '$_POST[bookname]'";
         $result = mysql_query($sql);
         $num = mysql_num_rows($result);

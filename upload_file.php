@@ -39,7 +39,7 @@ if ($name == "" || $contact == "") {
       echo "<script>alert('请检查数据完整性!'); history.go(-1);</script>";
   } else {
     $link = mysqli_connect('uf6p7e0s.2379lan.dnstoo.com', 'atjzglj_f', 'u760ohzz', 'atjzglj');
-    $a = $mysqli_query($link,"SET NAMES utf8");
+    $a = mysqli_query($link,"SET NAMES utf8");
     if($link)
     $res_insert = mysqli_query($link,"insert into lost(name,contact,situation,lostthingpic) values('$name','$contact','$situation','$filename')");
     //  $res_insert = mysqli_query($link,"insert into lost(name,contact,situation) values('$_POST[name]','$_POST[contact]','$_POST[situation]')");
