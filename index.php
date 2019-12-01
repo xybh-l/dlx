@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="renderer" content="webkit">
+    <!-- 目前仅限360急速浏览 webkit:急速  ie-comp:ie兼容模式   ie-stand: ie标准模式 -->
+    <title>东理淘</title>
+    <meta name="keywords" content="校园综合服务平台">
+    <meta name="description" content="一个为大学生服务的网站">
+    <!-- Bootstrap中文字体版 -->
+    <link href="css/index1.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="css/index2.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/index1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/index2.js"></script>
+</head>
+
+<script>
+    window.onload = function () {
+        document.getElementById('l1').setAttribute('class','active');
+        document.getElementById('l6').removeAttribute('class');
+    };
+</script>
+<body>
+    <!-- 整站通用的头部及导航条 -->
+    <?php require 'header.php'; ?>
+    <!-- 整站通用的头部及导航条 -->
+
+    <!-- 全屏轮播图 -->
+    <div id="carousel-example-generic" class="carousel slide my-slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <a target="_blank" href="schoolnews.html">
+                    <img src="image/index/index1.jpg" alt="新闻平台">
+                </a>
+            </div>
+            <div class="item">
+                <a target="_blank" href="trade.html">
+                    <img src="image/index/index2.jpg" alt="交易平台">
+                </a>
+            </div>
+            <div class="item">
+                <a target="_blank" href="L_materials.html">
+                    <img src="image/index/index3.jpg" alt="学习资料">
+                </a>
+            </div>
+            <div class="item">
+                <a target="_blank" href="con_service.html">
+                    <img src="image/index/index4.jpg" alt="便民服务">
+                </a>
+            </div>
+            <div class="item">
+                <a target="_blank" href="notice.php">
+                    <img src="image/index/index5.jpg" alt="交流天地">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 全屏轮播图 -->
+    <div class="index-row our-data">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 main-title">
+                    <h2 class="h1">网站介绍</h2>
+
+                    <p class="line line-big"></p>
+
+                    <h2>
+                        <small>为大学生提供一个集新闻平台，交易平台，便民服务，学习资料下载等功能的社区</small>
+                    </h2>
+                </div>
+                <div class="wi_o">
+                    <div class="lword">发布、收集学校最新新闻。<br>本平台结合互联网与新闻传承，<br />致力于新闻跟踪功能的实践。</div>
+                    <div class="rimage"><img src="image/index/newsinfo.png"></div>
+                </div>
+                <div class="wi_t">
+                    <div class="rword">一个第三方的交易安全保障平台，<br>主要作用是信息发布,提供市场。</div>
+                    <div class="limage"><img src="image/index/exchange.png"></div>
+                </div>
+                <div class="wi_o">
+                    <div class="lword">为民、便民、利民为服务宗旨。<br>为学生们提供快递代取、<br>失物招领等各类便民服务</div>
+                    <div class="rimage"><img src="image/index/ser.png" alt=""></div>
+                </div>
+                <div class="wi_t">
+                    <div class="rword">提供学习资料共享平台<br>免费下载学习资料</div>
+                    <div class="limage"><img src="image/index/bookshare.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>常用工具</h4>
+                        <ul>
+                            <li><a href="#">交易平台</a></li>
+                            <li><a href=" #">图片下载</a></li>
+                            <li><a href="#">资料下载</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>快速链接</h4>
+                        <ul>
+                            <li><a href="express.html">快递代取</a></li>
+                            <li><a href="#">留言板</a></li>
+                            <li><a href="#">公告栏</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="#">关于我们</a></li>
+                            <li><a href="#">服务协议</a></li>
+                            <li><a href="javascript:AddFavorite('东篱下-校园综合服务平台','http://study.lanwang.com/');">收藏本站</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-wechat">
+                        <img class="img-responsive" src="image/index/LW_WX.jpg">
+                        <p>微信<span class="hidden-sm">号:</span>dlx</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 footer-item footer-item-last">
+                    <div class="footer-contact">
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-phone.png">17687974147</h2>
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-qq.png">1353433900</h2>
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-mob.png">17687974147</h2>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Copyright © 2019 dlt.com All Rights Reversed. 东篱下 <a target="_blank" href="#">赣ICP备18008511号</a>
+                    </p>
+
+                    <div style="width:300px;margin:0 auto; padding:20px 0; text-align: center;">
+                        <a target="_blank" href="#"
+                            style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                            <img src="http://www.clantrip.com/static/images/ghs.png" style="float:left;" />
+                            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#fafafa;">
+                                赣ICP备18008511号</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 通用页脚 -->
+    <!-- 手机端底部 -->
+    <div id="mob-bottom" class="visible-xs-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="tel:17687974147">
+                        <img class="img-responsive center-block"
+                            src="http://www.clantrip.com/static/images/icons/mob-footer-phone.png">
+                        <span>电话咨询</span>
+                    </a>
+                </div>
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="tel:17687974147">
+                        <img class="img-responsive center-block"
+                            src="http://www.clantrip.com/static/images/icons/mob-footer-mob.png">
+                        <span>紧急电话</span>
+                    </a>
+                </div>
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="#">
+                        <img class="img-responsive center-block web-chat"
+                            src="http://www.clantrip.com/static/images/icons/mob-footer-chat.png">
+                        <span>在线咨询</span>
+                    </a>
+                </div>
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="sms:17687974147">
+                        <img class="img-responsive center-block"
+                            src="http://www.clantrip.com/static/images/icons/mob-footer-msm.png">
+                        <span>短信咨询</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 手机端底部 -->
+    <!-- 整站通用的尾部 -->
+
+
+    <script type="text/javascript" src="http://www.clantrip.com/static/js/common.js"></script>
+
+
+</body>
+
+</html>

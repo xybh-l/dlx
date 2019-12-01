@@ -15,21 +15,21 @@ body {
 }
 
 #header_1 {
-	padding-left: 8%;
+    margin: 0 auto;
     width: 1200px;
     height: 120px;
-	position: relative;
+    position: relative;
 }
 
 #header_1 .header_top {
-    height: 120px; 
+    height: 120px;
     margin: 0 auto;
-    width: 1200px;
+    width: 100%;
     /* background: #f5f5f5; */
 }
 
 #header_1 .header_top_center {
-    width: 1200px;
+    width: 100%;
     /*设置版心宽度*/
     height: 36px;
     /*设置高度*/
@@ -137,15 +137,15 @@ body {
 
 
 #ad {
-    width: 75%;
+    width: 1200px;
     height: 400px;
-	padding-left: 8%;
-    margin-top:20px; 
+    margin: 0 auto;
+    margin-top: 20px;
     position: relative;
 }
 
-#ad #ad_title{
-	text-indent: 50%;
+#ad #ad_title {
+    text-indent: 50%;
 }
 
 #ad #ad_top li {
@@ -158,8 +158,8 @@ body {
     height: 20px;
     width: 16.5%;
     position: absolute;
-    bottom: 20px;
-    left: 50%;
+    bottom: 10px;
+    left: 40%;
     background-color: rgba(255, 255, 255, 0.5);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -185,48 +185,47 @@ body {
     background: orangered;
 }
 
-#Separate{
-	height: 49px;
+#Separate {
+    height: 49px;
 }
 
 #ms {
-    width: 75%;
-    height: auto;
-	padding-left: 8%;
-	position: relative;
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
 }
 
 #ms .ms_top {
     width: 100%;
     height: 55px;
-    background-color: rgba(255,201,66,1.00);
+    background-color: rgba(255, 201, 66, 1.00);
     background-size: 75% 55px;
     line-height: 55px;
     display: flex;
-	border-radius: 50px;
+    border-radius: 50px;
 }
 
-#ms .ms_top ul{
-	width: 100%;
+#ms .ms_top ul {
+    width: 100%;
 }
 
-#ms .ms_top li{
-	list-style: none;
-	font-weight: bold;
+#ms .ms_top li {
+    list-style: none;
+    font-weight: bold;
     flex: 1;
-	font-size: 25px;
-	float: left;
-	padding-left: 17.5%;
+    font-size: 25px;
+    float: left;
+    padding-left: 17.5%;
 }
 
 #ms .ms_top a {
     color: #000000;
-	text-decoration: none;
-	transition: all 0.3s linear;
+    text-decoration: none;
+    transition: all 0.3s linear;
 }
 
 #ms .ms_top a:hover {
-    color: rgba(255,0,4,1.00);
+    color: rgba(255, 0, 4, 1.00);
 }
 
 #ms .ms_body {
@@ -242,42 +241,42 @@ body {
 }
 
 #ms .ms_body ul {
-	width: 100%;
+    width: 100%;
     height: 32%;
     list-style: none;
     display: flex;
     background: white;
 }
 
-#ms .ms_body ul li{
-	width: 16.6%;
-	height: 100%;
-	margin: 5px;
+#ms .ms_body ul li {
+    width: 16.6%;
+    height: 100%;
+    margin: 5px;
     flex: 1;
-	border: 1px solid #cccccc;
-	box-shadow: 0px 0px 5px #ccc;
-	border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-shadow: 0px 0px 5px #ccc;
+    border-radius: 5px;
 }
 
-#ms .ms_body ul li .UserHead{
-	width: 35px;
-	height: 35px;
-	border-radius: 17.5px;
-	position: relative;
-	left: 5%;
+#ms .ms_body ul li .UserHead {
+    width: 35px;
+    height: 35px;
+    border-radius: 17.5px;
+    position: relative;
+    left: 5%;
 }
 
-#ms .ms_body ul li .UserName{
-	font-size: 16px;
-	position: relative;
-	left: 7.5%;
+#ms .ms_body ul li .UserName {
+    font-size: 16px;
+    position: relative;
+    left: 7.5%;
 }
 
-#ms .ms_body ul li .CreditMark{
-	width: auto;
-	height: 4%;
-	position: relative;
-	left: 35%;
+#ms .ms_body ul li .CreditMark {
+    width: auto;
+    height: 4%;
+    position: relative;
+    left: 35%;
 }
 
 #ms .ms_body ul a {
@@ -306,10 +305,10 @@ body {
     margin-left: 3.75%;
 }
 
-.want{
-	font-size: 12px;
-	position: relative;
-	margin-left: 27.5%;
+.want {
+    font-size: 12px;
+    position: relative;
+    margin-left: 27.5%;
 }
 
 #ms .ms_body ul a p {
@@ -332,14 +331,14 @@ body {
     width: 25%;
     height: 92.9%;
     margin: 10px auto;
-	position: fixed;
-	top: 7.1%;
-	right: 0%;
+    position: fixed;
+    top: 7.1%;
+    right: 0%;
 }
 
 #hot #hot_title {
     height: 3.9%;
-	text-align: center;
+    text-align: center;
     background: #ff4400;
 }
 
@@ -367,7 +366,6 @@ body {
 
 #hot_body_top .active {
     border-bottom: 3px solid;
-   
 }
 
 #hot_body_top div {
@@ -377,7 +375,7 @@ body {
     line-height: 50px;
     font-size: 20px;
     font-family: "楷体";
-    border:none;
+    border: none;
 }
 
 #hot_body_bottom {
@@ -388,14 +386,12 @@ body {
     display: none;
     height: 406px;
     width: 100%;
-  
 }
 
 #hot_body_bottom div ul {
     height: 406px;
     list-style: none;
     width: 100%;
-   
 }
 
 #hot_body_bottom div li {
@@ -406,16 +402,20 @@ body {
     color: #666;
     border: none;
 }
-#hot_body_bottom div .active1{
-  border: 1px solid gold;
+
+#hot_body_bottom div .active1 {
+    border: 1px solid gold;
 }
+
 #hot_body_bottom div li img {
     width: 60%;
     height: 155px;
 }
-#footer{
-	width: 75%;
+
+#footer {
+    width: 100%;
 }
-#copyright{
-	width: 75%;
+
+#copyright {
+    width: 100%;
 }
