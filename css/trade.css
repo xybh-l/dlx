@@ -366,7 +366,6 @@ body {
 
 #hot_body_top .active {
     border-bottom: 3px solid;
-
 }
 
 #hot_body_top div {
@@ -387,14 +386,12 @@ body {
     display: none;
     height: 406px;
     width: 100%;
-
 }
 
 #hot_body_bottom div ul {
     height: 406px;
     list-style: none;
     width: 100%;
-
 }
 
 #hot_body_bottom div li {

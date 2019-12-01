@@ -1,395 +1,257 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html lang="zh-CN">
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
-        content="width=device-width,height=device-height,initial-scale=1.0, maximum-scale=1.0,  user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="renderer" content="webkit">
+    <!-- 目前仅限360急速浏览 webkit:急速  ie-comp:ie兼容模式   ie-stand: ie标准模式 -->
     <title>东理淘</title>
-    <!--设置图标-->
-    <link rel="icon" href="image/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/index.css">
-    <script>
-        window.onload = function () {
-            var oDiv = document.getElementById('ad');
-            var oBtn = oDiv.getElementsByTagName('input');
-            var oDiv1 = oDiv.getElementsByTagName('div');
-            for (var i = 0; i < oBtn.length; i++) {
-                oBtn[i].index = i;
-                oBtn[i].onmouseover = function () {
-                    for (var i = 0; i < oBtn.length; i++) {
-                        oBtn[i].className = '';
-                        oDiv1[i].style.display = 'none';
-                    }
-                    this.className = 'active';
-                    oDiv1[this.index].style.display = 'block';
-                }
-            }
-        }
-    </script>
+    <meta name="keywords" content="校园综合服务平台">
+    <meta name="description" content="一个为大学生服务的网站">
+    <!-- Bootstrap中文字体版 -->
+    <link href="css/index1.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="css/index2.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/index1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/index2.js"></script>
 </head>
 
 <body>
-
-    <!--头部-->
+    <!-- 整站通用的头部及导航条 -->
     <div id="header">
-        <!--顶部-->
-        <div class="header_top">
-            <!--版心-->
-            <div class="header_top_center">
-                <!--中部左侧-->
-                <div class="h_top_left">
-                    欢迎来到东理淘!
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" style="padding:0 0 0 15px;" href="http://study.lanwang.online"><img
+                            alt="Brand" style="max-width:130px;" src="image/logo4.png"></a>
                 </div>
-                <div class="h_top_right">
-                    <a href="login.html">登录</a>
-                    <a href="regist.html">注册</a>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="http://study.lanwang.online">首页 <span
+                                    class="sr-only">(current)</span></a>
+                            <p class="line-top hidden-xs"></p>
+                        </li>
+                        <li><a href="schoolnews.html">校园新闻</a></li>
+                        <li><a href="trade.html">交易平台</a></li>
+                        <li><a href="con_service.html">便民服务</a></li>
+                        <li><a href="L_materials.html">学习资料</a></li>
+                        <li><a href="notice.php">交流天地</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+    <!-- 整站通用的头部及导航条 -->
+
+    <!-- 全屏轮播图 -->
+    <div id="carousel-example-generic" class="carousel slide my-slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <a target="_blank" href="schoolnews.html">
+                    <img src="image/index/index1.jpg" alt="新闻平台">
+                </a>
+            </div>
+            <div class="item">
+                <a target="_blank" href="trade.html">
+                    <img src="image/index/index2.jpg" alt="交易平台">
+                </a>
+            </div>
+            <div class="item">
+                <a target="_blank" href="L_materials.html">
+                    <img src="image/index/index3.jpg" alt="学习资料">
+                </a>
+            </div>
+            <div class="item">
+                <a target="_blank" href="con_service.html">
+                    <img src="image/index/index4.jpg" alt="便民服务">
+                </a>
+            </div>
+            <div class="item">
+                <a target="_blank" href="notice.php">
+                    <img src="image/index/index5.jpg" alt="交流天地">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 全屏轮播图 -->
+    <div class="index-row our-data">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 main-title">
+                    <h2 class="h1">网站介绍</h2>
+
+                    <p class="line line-big"></p>
+
+                    <h2>
+                        <small>为大学生提供一个集新闻平台，交易平台，便民服务，学习资料下载等功能的社区</small>
+                    </h2>
+                </div>
+                <div class="wi_o">
+                    <div class="lword">发布、收集学校最新新闻。<br>本平台结合互联网与新闻传承，<br />致力于新闻跟踪功能的实践。</div>
+                    <div class="rimage"><img src="image/index/newsinfo.png"></div>
+                </div>
+                <div class="wi_t">
+                    <div class="rword">一个第三方的交易安全保障平台，<br>主要作用是信息发布,提供市场。</div>
+                    <div class="limage"><img src="image/index/exchange.png"></div>
+                </div>
+                <div class="wi_o">
+                    <div class="lword">为民、便民、利民为服务宗旨。<br>为学生们提供快递代取、<br>失物招领等各类便民服务</div>
+                    <div class="rimage"><img src="image/index/ser.png" alt=""></div>
+                </div>
+                <div class="wi_t">
+                    <div class="rword">提供学习资料共享平台<br>免费下载学习资料</div>
+                    <div class="limage"><img src="image/index/bookshare.png"></div>
                 </div>
             </div>
         </div>
-        <div class="header_center">
-            <div class="h_c_logo">
-                <a href="index.html"> <img src="image/logo4.png" alt=""></a>
-            </div>
-            <div class="h_c_search">
-                <div id="show_time">  
-                    <script>
-                        //这里代码多了几行，但是不会延迟显示，速度比较好，格式可以自定义，是理想的时间显示
-                        setInterval("fun(show_time)", 1);
-
-                        function fun(timeID) {
-                            var date = new Date(); //创建对象  
-                            var y = date.getFullYear(); //获取年份  
-                            var m = date.getMonth() + 1; //获取月份  返回0-11  
-                            var d = date.getDate(); // 获取日  
-                            var w = date.getDay(); //获取星期几  返回0-6   (0=星期天) 
-                            var ww = ' 星期' + '日一二三四五六'.charAt(new Date().getDay()); //星期几
-                            var h = date.getHours(); //时
-                            var minute = date.getMinutes() //分
-                            var s = date.getSeconds(); //秒
-                            var sss = date.getMilliseconds(); //毫秒
-                            if (m < 10) {
-                                m = "0" + m;
-                            }
-                            if (d < 10) {
-                                d = "0" + d;
-                            }
-                            if (h < 10) {
-                                h = "0" + h;
-                            }
-
-
-                            if (minute < 10) {
-                                minute = "0" + minute;
-                            }
-
-
-                            if (s < 10) {
-                                s = "0" + s;
-                            }
-
-
-                            if (sss < 10) {
-                                sss = "00" + sss;
-                            } else if (sss < 100) {
-                                sss = "0" + sss;
-                            }
-
-
-                            document.getElementById(timeID.id).innerHTML = y + "-" + m + "-" + d + "   " + h + ":" +
-                                minute + ":" + s + "  " + ww;
-                            //document.write(y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s);  
-                        }
-                    </script>  
-                </div>
-                <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=2" width="770" height="70"
-                    frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-                <!-- <form action="#">
-                        <input type="text" placeholder="请输入要查询的内容:" class="t_input">
-                        <input type="submit" class="t_button" value="查询">
-                        </form> -->
-                <!-- <div class="hot">
-                    <a href="#">新鲜事</a>
-                    <a href="#">交易平台</a>
-                    <a href="#">便民服务</a>
-                </div> -->
-            </div>
-            <div class="h_c_code">
-                <img src="image/L_WX.png" alt="">
-            </div>
-        </div>
-        <div class="nav">
-            <ul>
-                <li><a href="#">首页</a></li>
-                <li><a href="schoolnews.html" target="_blank">校园新闻</a></li>
-                <li><a href="trade.html" target="_blank">交易平台</a></li>
-                <li><a href="con_service.html" target="_blank">便民服务</a></li>
-                <li><a href="L_materials.html" target="_blank">学习资料</a></li>
-                <li><a href="blank.html">公告栏</a></li>
-            </ul>
-        </div>
     </div>
-    <!--广告-->
-    <div id="ad">
-        <div style="display: block">
-            <a href="#"><img src="image/index/homepage.jpg" width="1200px" height="360px"></a>
-        </div>
-        <div><a href="express.html"><img src="image/index/schoolmail.png" width="1200px" height="360px"></a></div>
-        <div><a href="trade.html"><img src="image/index/secondhand.png" width="1200px" height="360px"></a></div>
-        <div><a href="L_materials.html"><img src="image/index/study.png" width="1200px" height="360px"></a></div>
-        <div><a href="http://www.baidu.com"><img src="image/index/lost.jpg" width="1200px" height="360px"></a></div>
-        <div><a href="http://study.lanwang.online"><img src="image/index/notice.jpg" width="1200px" height="360px"></a>
-        </div>
-        <input type="button" value="首页" class='active'>
-        <input type="button" value="快递代取">
-        <input type="button" value="二手交易">
-        <input type="button" value="学习资料">
-        <input type="button" value="失物招领">
-        <input type="button" value="公告栏">
     </div>
-    <div id="present">
-        <h3>网站简介</h3>
-        <p>
-            1.本作品提供了一个综合性新闻发布平台，可将各种重要新闻汇聚一起，减少信息收集时间，提高阅读效率。</br></br></br>2.本作品提供一个大学生二手交易平台，为大学生之间的物品交易提供一个便利，公正的环境
-            </br></br></br>3.提供失物招领平台，代取快递等便民服务。
-        </p>
-    </div>
-    <!--热门-->
-    <div id="hot">
-        <h3 class="hot_title">
-            网站地图
-        </h3>
-        <div class="hot_body">
-            <ul>
-                <li><a href="L_materials.html">
-                        <img src="image/pic_lw/study.png" alt="">
-                    </a></li>
-                <li><a href="schoolnews.html">
-                        <img src="image/pic_lw/schoolnews2.png" alt="">
-                    </a></li>
-                <li><a href="con_service.html">
-                        <img src="image/pic_lw/service.jpg" alt="">
-                    </a></li>
-                <li><a href="trade.html"> <img src="image/pic_lw/trade.jpg" alt="" width="290px"></a>
-                </li>
-            </ul>
-        </div>
-    </div>
+
     <div id="footer">
-        <div class="link">
-            <a href="aboutus.html">关于我们</a>
-            |
-            <a href="contact_way.html">联系我们</a>
-            |
-            <a href="blank.html">人才招聘</a>
-            |
-            <a href="blank.html">商家入驻</a>
-            |
-            <a href="blank.html">广告服务</a>
-            |
-            <a href="www.lanwang.online" title="qq空间">友情链接</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>常用工具</h4>
+                        <ul>
+                            <li><a href="#"">交易平台</a></li>
+                            <li><a href=" #">图片下载</a></li>
+                            <li><a href="#">资料下载</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>快速链接</h4>
+                        <ul>
+                            <li><a href="express.html">快递代取</a></li>
+                            <li><a href="#">留言板</a></li>
+                            <li><a href="#">公告栏</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="#">关于我们</a></li>
+                            <li><a href="#">服务协议</a></li>
+                            <li><a href="javascript:AddFavorite('东篱下-校园综合服务平台','http://study.lanwang.com/');">收藏本站</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-wechat">
+                        <img class="img-responsive" src="image/index/LW_WX.jpg">
+                        <p>微信<span class="hidden-sm">号:</span>dlx</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 footer-item footer-item-last">
+                    <div class="footer-contact">
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-phone.png">17687974147</h2>
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-qq.png">1353433900</h2>
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-mob.png">17687974147</h2>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
         </div>
     </div>
     <div id="copyright">
-        © 2019 donglitao.cn 版权所有
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Copyright © 2019 dlt.com All Rights Reversed. 东篱下 <a target="_blank" href="#">赣ICP备18008511号</a>
+                    </p>
+
+                    <div style="width:300px;margin:0 auto; padding:20px 0; text-align: center;">
+                        <a target="_blank" href="#"
+                            style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                            <img src="http://www.clantrip.com/static/images/ghs.png" style="float:left;" />
+                            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#fafafa;">
+                                赣ICP备18008511号</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?54a553e5465b6608228037bd7ebfb10c";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    <script>
-        var fnTextPopup = function (arr, options) {
-            // arr参数是必须的
-            if (!arr || !arr.length) {
-                return;
-            }
-            // 主逻辑
-            var index = 0;
-            document.documentElement.addEventListener('click', function (event) {
-                var x = event.pageX,
-                    y = event.pageY;
-                var eleText = document.createElement('span');
-                eleText.className = 'text-popup';
-                this.appendChild(eleText);
-                if (arr[index]) {
-                    eleText.innerHTML = arr[index];
-                } else {
-                    index = 0;
-                    eleText.innerHTML = arr[0];
-                }
-                // 动画结束后删除自己
-                eleText.addEventListener('animationend', function () {
-                    eleText.parentNode.removeChild(eleText);
-                });
-                // 位置
-                eleText.style.left = (x - eleText.clientWidth / 2) + 'px';
-                eleText.style.top = (y - eleText.clientHeight) + 'px';
-                // index递增
-                index++;
-            });
-        };
-        fnTextPopup(['富强', '民主', '文明', '和谐', '自由', '平等', '公正', '法治', '爱国', '敬业', '诚信', '友善']);
-        ! function () {
+    <!-- 通用页脚 -->
+    <!-- 手机端底部 -->
+    <div id="mob-bottom" class="visible-xs-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="tel:17687974147">
+                        <img class="img-responsive center-block"
+                            src="http://www.clantrip.com/static/images/icons/mob-footer-phone.png">
+                        <span>电话咨询</span>
+                    </a>
+                </div>
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="tel:17687974147">
+                        <img class="img-responsive center-block"
+                            src="http://www.clantrip.com/static/images/icons/mob-footer-mob.png">
+                        <span>紧急电话</span>
+                    </a>
+                </div>
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="#">
+                        <img class="img-responsive center-block web-chat"
+                            src="http://www.clantrip.com/static/images/icons/mob-footer-chat.png">
+                        <span>在线咨询</span>
+                    </a>
+                </div>
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="sms:17687974147">
+                        <img class="img-responsive center-block"
+                            src="http://www.clantrip.com/static/images/icons/mob-footer-msm.png">
+                        <span>短信咨询</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 手机端底部 -->
+    <!-- 整站通用的尾部 -->
+
+
+    <script type="text/javascript" src="http://www.clantrip.com/static/js/common.js"></script>
 
-            function n(n, e, t) {
-
-                return n.getAttribute(e) || t
-
-            }
-
-
-
-            function e(n) {
-
-                return document.getElementsByTagName(n)
-
-            }
-
-
-
-            function t() {
-
-                var t = e("script"),
-
-                    o = t.length,
-
-                    i = t[o - 1];
-
-                return {
-
-                    l: o,
-
-                    z: n(i, "zIndex", -1),
-
-                    o: n(i, "opacity", .5),
-
-                    c: n(i, "color", "0,0,0"),
-
-                    n: n(i, "count", 99)
-
-                }
-
-            }
-
-
-
-            function o() {
-
-                a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-                    c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body
-                    .clientHeight
-
-            }
-
-
-
-            function i() {
-
-                r.clearRect(0, 0, a, c);
-
-                var n, e, t, o, m, l;
-
-                s.forEach(function (i, x) {
-
-                    for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y <
-                        0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[
-                        e], null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m *
-                        m,
-                        l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n
-                                .max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle =
-                            "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r
-                            .stroke()))
-
-                }), x(i)
-
-            }
-
-            var a, c, u, m = document.createElement("canvas"),
-
-                d = t(),
-
-                l = "c_n" + d.l,
-
-                r = m.getContext("2d"),
-
-                x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window
-                .mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-                function (n) {
-
-                    window.setTimeout(n, 1e3 / 45)
-
-                },
-
-                w = Math.random,
-
-                y = {
-
-                    x: null,
-
-                    y: null,
-
-                    max: 2e4
-
-                };
-
-            m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0]
-                .appendChild(m), o(), window.onresize = o, window.onmousemove = function (n) {
-
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-
-                }, window.onmouseout = function () {
-
-                    y.x = null, y.y = null
-
-                };
-
-            for (var s = [], f = 0; d.n > f; f++) {
-
-                var h = w() * a,
-
-                    g = w() * c,
-
-                    v = 2 * w() - 1,
-
-                    p = 2 * w() - 1;
-
-                s.push({
-
-                    x: h,
-
-                    y: g,
-
-                    xa: v,
-
-                    ya: p,
-
-                    max: 6e3
-
-                })
-
-            }
-
-            u = s.concat([y]), setTimeout(function () {
-
-                i()
-
-            }, 100)
-
-        }();
-    </script>
 
 </body>
 

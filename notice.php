@@ -17,7 +17,8 @@ session_start();
 setcookie('username', $_SESSION['username']);
 ?>
 <!DOCTYPE html>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
 <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <html class="no-js lt-ie9"> <![endif]-->
 <html class="no-js">
@@ -241,8 +242,8 @@ setcookie('username', $_SESSION['username']);
                 //    修改人:蓝旺
                 $content = nl2br($gb_array['content']);
                 echo '<div style="height: 160px;font-size: 20px;">';
-                if (isset($_SESSION['auth']) and $_SESSION['auth']==0)
-                    echo '<p style="float:right;"><a id="deleteMessage" onclick="deleteMessage('.$gb_array["id"].');">删除</a></p>';
+                if (isset($_SESSION['auth']) and $_SESSION['auth'] == 0)
+                    echo '<p style="float:right;"><a id="deleteMessage" onclick="deleteMessage(' . $gb_array["id"] . ');">删除</a></p>';
                 echo '<div style="float: left;height: 120px;width: 120px;"><img style="width: 120px;height: 120px;" src="image/head.png" alt=""></div>';
                 echo '<div style="float:left; width: 400px;height: 180px;">';
                 echo '<p style="font-size: 25px;margin: 0 0;">';
