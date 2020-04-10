@@ -1,6 +1,6 @@
 > + <strong><font face='楷体' size=4px>第一作者:蓝旺</font>
 > + <font face='楷体' size=4px>第二作者:刘家宁</font>
-  > + <font face='楷体' size=4px>第三作者:吴显海</font></strong>
+> + <font face='楷体' size=4px>第三作者:吴显海</font>
 > + <font face='楷体' size=4px>第四作者:兰可易</font></strong>
 
 ### 于2019年12月2日完成PHP后端开发
