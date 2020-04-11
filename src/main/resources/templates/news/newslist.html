@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校级新闻</title>
+    <!-- Bootstrap中文字体版 -->
+    <link href="/css/index1.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="/css/index2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/schoolnews.css">
+</head>
+
+<body>
+    <div th:insert="template::header"></div>
+    <div th:insert="newsTemplate::header"></div>
+    <div class="main w">
+        <div class="title">
+            <img src="/image/news/news-title.png" alt="">
+        </div>
+
+        <div class="content">
+            <ul>
+                <li th:each="news:${pageInfo.list}">
+                    <div class="left"><a th:title="${news.getTitle()}" class="news_title" th:href="@{${news.getUrl()}}" target="_blank" th:text="${news.getTitle()}"></a></div>
+                    <div class="right"><span th:text="${news.getDate()}"></span></div>
+                </li>
+            </ul>
+        </div>
+        <div class="form">
+            <nav aria-label="Page navigation">
+                <ul  th:if="${pageInfo}!=null" class="pagination">
+                    <li>
+                        <a th:href="@{${#httpServletRequest.getContextPath()}(page=${pageInfo.getPrePage()})}" aria-label="Previous"
+                           th:if="${pageInfo.hasPreviousPage}">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li th:if="${pageInfo.pageNum} - 3 <= 0 and ${pageInfo.pageNum} + 3 <= ${pageInfo.pages}"
+                        th:class="${page==pageInfo.pageNum}?'active':''"
+                        th:each="page:${#numbers.sequence(1, pageInfo.pageNum + 3)}"><a th:href="@{${#httpServletRequest.getContextPath()}(page=${page})}"
+                                                                                        th:text="${page}"></a></li>
+                    <li th:if="${pageInfo.pageNum} - 3 <= 0 and ${pageInfo.pageNum} + 3 > ${pageInfo.pages}"
+                        th:class="${page==pageInfo.pageNum}?'active':''"
+                        th:each="page:${#numbers.sequence(1, pageInfo.pages)}"><a th:href="@{${#httpServletRequest.getContextPath()}(page=${page})}"
+                                                                                  th:text="${page}"></a></li>
+                    <li th:if="${pageInfo.pageNum} - 3 > 0 and ${pageInfo.pageNum} + 3 <= ${pageInfo.pages}"
+                        th:class="${page==pageInfo.pageNum}?'active':''"
+                        th:each="page:${#numbers.sequence(pageInfo.pageNum - 3, pageInfo.pageNum + 3)}"><a
+                            th:href="@{${#httpServletRequest.getContextPath()}(page=${page})}" th:text="${page}"></a></li>
+                    <li th:if="${pageInfo.pageNum} - 3 > 0 and ${pageInfo.pageNum} + 3 > ${pageInfo.pages}"
+                        th:class="${page==pageInfo.pageNum}?'active':''"
+                        th:each="page:${#numbers.sequence(pageInfo.pageNum - 3, pageInfo.pages)}"><a
+                            th:href="@{${#httpServletRequest.getContextPath()}(page=${page})}" th:text="${page}"></a></li>
+                    <li>
+                        <a th:href="@{${#httpServletRequest.getContextPath()}(page=${pageInfo.getNextPage()})}" aria-label="Next"
+                           th:if="${pageInfo.hasNextPage}">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div th:insert="template::footer"></div>
+</body>
+
+</html>

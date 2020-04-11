@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/LoginAndSignup.css">
+</head>
+<body>
+<div class="container">
+    <img src="image/LoginAndSignup/bc.jpg" alt="">
+    <div class="panel">
+        <div class="content login">
+            <div class="switch">
+                <span id='login' th:class="${info}=='login'?'active':''">登录</span><span>/</span><span id='signup' th:class="${info}=='signup'?'active':''">注册</span>
+            </div>
+            <form>
+                <div id='email' class="input" placeholder='邮箱地址'><input id="user_email" type="text"></div>
+                <div class="input" placeholder='用户名'><input type="text" id="username"></div>
+                <div class="input" placeholder='密码'><input type="password" id="password"></div>
+                <div id='repeat' class="input" placeholder='确认密码'><input type="password" id="repeat_password"></div>
+                <span>忘记密码?</span>
+                <button class="check" onclick="return formcheck()" onsubmit="return false">登录</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $('#login').click(function () {
+        $('.switch span').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parents('.content').removeClass('signup');
+        $(this).parents('.content').addClass('login');
+
+        $('form button').text('登录')
+
+    });
+
+    $('#signup').click(function () {
+        $('.switch span').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parents('.content').removeClass('login');
+        $(this).parents('.content').addClass('signup');
+
+        $('form button').text('注册');
+    });
+
+    $('.input input').on('focus', function () {
+        $(this).parent().addClass('focus');
+    });
+
+    $('.input input').on('blur', function () {
+        if ($(this).val() === '')
+            $(this).parent().removeClass('focus');
+    });
+
+    function formcheck() {
+        var username = $('#username').val();
+        var password = $('#password').val();
+        var email = $('#user_email').val();
+        var repeatpassword = $('#repeat_password').val();
+        $.ajax({
+            url: '/check',
+            type: 'post',
+            timeout: 2000,
+            data: {  // 数据
+                user: username,
+                pwd: password,
+                email: email
+            },
+            success: function (data) {
+                res=JSON.parse(data);
+                check(res.status_code);
+            },
+            error: function () {
+                console.log('网络错误!');
+            }
+        });
+        return false;
+        //post()方式
+        // $.ajax({
+        //     url:'/index',
+        //     type:'post',
+        //     data:{name:'张三',age:12},
+        //     success:function(data){
+        //         $('p').html(data);
+        //     },
+        //     error:function(error){
+        //         console.log(error)
+        //     }})
+    };
+
+
+    function check(status_code) {
+        alert(status_code);
+        if (status_code == 200) {
+            alert("注册成功");
+            $('#username').val('');
+            $('#password').val('');
+            $('#email').val('');
+            $('#repeat_password').val('');
+        }else
+            alert("注册失败");
+
+
+    }
+</script>
+</html>

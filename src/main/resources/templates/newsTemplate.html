@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="header">
+        <div class="header w">
+            <div class="logo">
+                <a href="/news"><img src="/image/news/banner.jpg"></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="/news/SchoolNews">校级新闻</a></li>
+                    <li><a href="/news/CollegeNews">院级新闻</a></li>
+                    <li><a href="/news/SchoolNotice">学校通知</a></li>
+                    <li><a href="/news/CampusScenery">校园影像</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="输入关键词">
+                <button>搜索</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

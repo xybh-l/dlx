@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    height: 88px;
+    border: 1px solid #ccc;
+}
+
+#header .h_center {
+    width: 1200px;
+    height: 88px;
+    margin: 0 auto;
+    /*居中*/
+}
+
+#header .h_center img {
+    float: left;
+    height: 60px;
+    margin-top: 5px;
+}
+
+#header .h_center p {
+    float: left;
+    /*设置浮动*/
+    text-align: center;
+    width: 880px;
+    font-size: 10px;
+    border: 1px solid #ffb4a8;
+    margin-top: 20px;
+    margin-left: 80px;
+    /**/
+    padding: 3px;
+    /*内边距*/
+    color: #6c6c6c;
+    background: #fef2f2;
+}
+
+#login_body {
+    height: 600px;
+    background-image: url(../image/login_bgnew.jpg);
+    background-size: 1750px;
+    background-position: center center;
+}
+
+#login_body .login_b_center {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#login_body .login_bg {
+    width: 350px;
+    height: 351px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    /*内部缩进*/
+    position: absolute;
+    right: 0;
+    top: 120px;
+}
+#login_body .login_bg form .username img{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+#login div {
+    height: 40px;
+    margin-top: 20px;
+}
+
+#login span {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border: 1px #ccc solid;
+    background:rgba(255, 255, 255, 0.5);
+    float: left;
+}
+
+#login input {
+    width: 250px;
+    height: 40px;
+    float: left;
+}
+
+#login .login_btn input {
+    background: rgba(76, 203, 253, 0.596);
+    border: solid 2px rgba(190, 28, 28, 0.596);
+    width: 300px;
+    color: white;
+    font-size: 10px;
+}
+
+#login .forgot_pwd {
+    text-align: right;
+    margin-top: 40px;
+    font-size: 10px;
+}
+
+#footer {
+    text-margin: center;
+    width: 1200px;
+    height: 300;
+    padding-top: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#footer .link {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(104, 53, 53);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.music{
+    margin: 0 auto;
+}
+#copyright {
+    text-align: center;
+    margin-top: 20px;
+}
+/*audio{
+    display: none;
+}*/

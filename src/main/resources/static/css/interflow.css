@@ -1,0 +1,187 @@
+@charset "utf-8";
+/*导航栏*/
+a{
+	text-decoration: none;
+}
+body{
+	background-image: url("../image/bg.jpg");
+	background-size: 100% 100%;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+body #body nav{
+	position: fixed;
+	right: 0%;
+	margin: 0px;
+    padding: 0px;
+}
+
+/*公告栏*/
+body #body #Notice{
+	padding: 0px 15%;
+	text-align: center;
+	height: auto;
+}
+.swiper-container {
+    width: 100%;
+	height: 400px;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 480px;
+    height: 360px;
+}
+
+/*留言栏*/
+body #body #MessageBoard{
+	padding: 0px 15%;
+}
+
+body #body #MessageBoard #MessageBoardTitle{
+	text-align: center;
+}
+body #body #MessageBoard #ListBody{
+	padding: 5px;
+	border: 1px solid #cccccc;
+	box-shadow: 0px 0px 5px #ccc;
+	border-radius: 5px;
+}
+body #body #MessageBoard #ListBody .ListElements{
+	text-align: center;
+	padding: 5px;
+	border: 1px solid #cccccc;
+	box-shadow: 0px 0px 5px #ccc;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	width: 68%;
+	height: 130px;
+	opacity: 0;
+	position: absolute;
+	top: 120px;
+	background-color: rgba(160,160,160,0.30);
+}
+body #body #MessageBoard #ListBody .ListElements .TheImg{
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+	position: relative;
+	right: 0px;
+	float: left;
+}
+body #body #MessageBoard #ListBody .ListElements .MessageTitle{
+	font-size: 24px;
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+body #body #MessageBoard #ListBody .ListElements .Time{
+	font-size: 12px;
+	position: relative;
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px; 
+}
+body #body #MessageBoard #ListBody .ListElements .Message{
+	font-size: 18px;
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	margin-top: 0px;
+}
+#ListElements_1{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 0s infinite normal;
+}
+#ListElements_2{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 1.25s infinite normal;
+}
+#ListElements_3{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 2.5s infinite normal;
+}
+#ListElements_4{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 3.75s infinite normal;
+}
+#ListElements_5{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 5s infinite normal;
+}
+#ListElements_6{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 6.25s infinite normal;
+}
+#ListElements_7{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 7.5s infinite normal;
+}
+#ListElements_8{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 8.75s infinite normal;
+}
+#ListElements_9{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 10s infinite normal;
+}
+#ListElements_10{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 11.25s infinite normal;
+}
+#ListElements_11{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 12.5s infinite normal;
+}
+#ListElements_12{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 13.75s infinite normal;
+}
+#ListElements_13{
+	animation: MessageMove 15s cubic-bezier(0.4,0.3,0.3,0.4) 15s infinite normal;
+}
+@keyframes MessageMove{
+	0%{
+		opacity: 0;
+		transform: translate(1500px,2350px);
+	}
+	15%{
+		opacity: 1;
+		transform: translate(0px,2300px);
+	}
+	85%{
+		opacity: 1;
+		transform: translate(0px,520px);
+	}
+	100%{
+		opacity: 0;
+		transform: translate(-1500px,470px);
+	}
+}
+
+#form_box{
+	background-image: url("../image/信纸（无横线）.jpg");
+	background-size: cover;
+	padding: 5px;
+	border: 1px solid #cccccc;
+	box-shadow: 0px 5px 10px #aaa;
+	border-radius: 20px;
+	width: 500px;
+	position: fixed;
+	bottom: 0px;/*这两个要通过JS代码实现窗口自适应*/
+	transition: all 0.3s linear;
+}
+
+#form_box .form h3{
+	text-align: center;
+}
+
+#form_box .form #PushButton{
+	width: 60px;
+	margin-left: 215px;
+	border-radius: 15px;
+	background-color: chocolate;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.5s linear;
+}
+
+#form_box .form #PushButton:hover{
+	background-color: chartreuse;
+	transition: all 0.5s linear;
+}
+
+#form_box .form form p textarea{
+	resize: none;
+	width: 400px;
+	height: 150px;
+}

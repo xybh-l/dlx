@@ -1,0 +1,48 @@
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.notice-body {
+    background-color: white;
+    border: 3px #333333 solid;
+    padding-top: 10px;
+    border-radius: 5px;
+    min-height: 800px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 100px;
+    padding: 5px 0 0 5px;
+    width: 100%;
+    resize: none;
+    border: 2px #999999 solid;
+    border-radius: 5px;
+}
+
+#MessageBoardTitle {
+    text-align: center;
+}
+
+.notice-text {
+    height: 80px;
+    margin-top: 5px;
+    border: 2px solid;
+    border-radius: 3px;
+}
+
+/*.form {*/
+/*    width: 1200px;*/
+/*    height: 50px;*/
+/*    line-height: 50px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.pagination {*/
+/*    margin: 0 auto;*/
+/*    float: bottom;*/
+/*}*/

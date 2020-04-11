@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: #f3f5f7;
+}
+.w{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+/* 导航栏开始 */
+.nav-main{
+    height: 82px;
+}
+.header{
+    height: 74px;
+    margin: 30px auto;
+    background-color: #f9c501;
+}
+.logo{
+    float: left;
+    margin: 0 60px;
+    height: 74px;
+    width: 74px;
+}
+.nav{
+    float:left;
+}
+.nav ul li{
+/* 文字不一样多的时候用padding挤开 */
+    float: left;
+    list-style: none;
+}
+.nav ul li a{
+    display: block;
+    height: 74px;
+    padding: 0 10px;
+    margin-right: 20px;
+    line-height: 74px;
+    color: #050505;
+}
+.nav ul li a:hover{
+    border-bottom: 2px solid black;
+    color: whitesmoke;
+    font-weight: 700;
+}
+.search{
+    float: left;
+    margin-left: 70px;
+}
+.search input{
+    margin: 15px 0;
+    float: left;
+    padding-left: 20px;
+    width: 340px;
+    height: 40px;
+    border: 1px #fff;
+    border-radius: 10px;
+    color: #ccc;
+}
+.search button{
+    margin: 15px 0;
+    background:#f9c501;
+    height: 40px;
+    width: 60px;
+    border-radius:20px ;
+}
+.main{
+    background-color: #fff;
+}
+.title{
+    width: 1185px;
+    /*height: 56px;*/
+    padding: 10px 0 10px 15px;
+    border-bottom: 2px dashed black;
+}
+.content li{
+    margin: 35px 60px 10px;
+    height: 30px;
+    border-bottom: 1px dotted #ccc;
+}
+.content li a{
+    margin: 10px;
+    text-align: center;
+    color: #050505;
+    font-size: 20px;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.form{
+    width: 1200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.pagination{
+    margin: 0 auto;
+    float: bottom;
+}
+.footer{
+    background-color: pink;
+    height: 240px;
+    margin-top: 50px;
+}
+.version{
+    background-color: blue;
+    height: 125px;
+}
+
+.left{
+    max-width: 800px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+

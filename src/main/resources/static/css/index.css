@@ -1,0 +1,152 @@
+* {
+
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    /*消除下划线*/
+}
+
+body {
+    background: #f5f5f5;
+}
+
+#ad {
+    width: 1200px;
+    height: 400px;
+    background: white;
+    margin: 20px auto;
+
+}
+
+#ad div {
+    width: 1200px;
+    height: 360px;
+    display: none;
+}
+
+#ad input {
+    display: block;
+    width: 200px;
+    height: 38px;
+    float: left;
+    background: rgba(228, 35, 35, 0.8);
+}
+
+#ad .active {
+    background: orangered
+}
+
+#present {
+    width: 1200px;
+    height: 500px;
+    margin: 10px auto;
+}
+
+#present h3 {
+    height: 44px;
+    line-height: 44px;
+    font-size: 20px;
+    color: #ff242d;
+    border-bottom: 1px solid #cccc;
+    font-weight: bold;
+    background: white;
+    padding-left: 20px;
+}
+
+#present p {
+    font-size: 20px;
+    height: 410px;
+    background: url(../image/index/introduce.jpg) no-repeat center center;
+    background-size: 100%;
+}
+
+#hot {
+    width: 1200px;
+    height: 500px;
+    margin: 10px auto;
+}
+
+#hot h3 {
+    height: 44px;
+    line-height: 44px;
+    font-size: 20px;
+    color: #ff242d;
+    border-bottom: 1px solid #cccc;
+    font-weight: bold;
+    background: white;
+    padding-left: 20px;
+}
+
+
+#hot .hot_body ul {
+    list-style: none;
+    padding-left: 0px;
+    overflow: hidden;
+}
+
+#hot .hot_body ul li {
+    height: 380px;
+    width: 300px;
+    background: white;
+    float: left;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+#hot .hot_body ul li a img {
+    width: 290px;
+    height: 370px;
+    margin: 0 auto;
+}
+
+#hot .hot_body ul li a {
+    width: 290px;
+    height: 380px;
+    display: block;
+    margin: 0 auto;
+    color: #6c6c6c;
+}
+
+#footer .link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#footer .link a {
+    text-decoration: none;
+    color: rgb(104, 53, 53);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#copyright {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.text-popup {
+    animation: textPopup 2s;
+    color: red;
+    user-select: none;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 99;
+}
+
+@keyframes textPopup {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-50px);
+    }
+}

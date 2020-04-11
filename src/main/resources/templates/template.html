@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="header">
+    <div id="header">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" style="padding:0 0 0 15px;" href="http://study.lanwang.online"><img
+                            alt="Brand" style="max-width:130px;" src="/image/logo4.png"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="l1" th:class="${nowPage}=='index'?'active':''"><a href="/">首页 </a></li>
+                        <li id="l2" th:class="${nowPage}=='schoolnews'?'active':''"><a href="/news">校园新闻</a></li>
+                        <li id="l3" th:class="${nowPage}=='trade'?'active':''"><a href="/trade">交易平台</a></li>
+                        <li id="l4" th:class="${nowPage}=='service'?'active':''"><a href="/service">便民服务</a></li>
+                        <li id="l5" th:class="${nowPage}=='learn'?'active':''"><a href="/L_materials">学习资料</a></li>
+                        <li id="l6" th:class="${nowPage}=='notice'?'active':''"><a href="/notice">交流天地</a>
+                            <!--<span class="sr-only">(current)</span></a>
+                                <p class="line-top hidden-xs"></p>-->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+</div>
+<div th:fragment="footer">
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>常用工具</h4>
+                        <ul>
+                            <li><a href="#">交易平台</a></li>
+                            <li><a href=" #">图片下载</a></li>
+                            <li><a href="#">资料下载</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>快速链接</h4>
+                        <ul>
+                            <li><a href="express.html">快递代取</a></li>
+                            <li><a href="#">留言板</a></li>
+                            <li><a href="#">公告栏</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-list">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="#">关于我们</a></li>
+                            <li><a href="#">服务协议</a></li>
+                            <li><a href="javascript:AddFavorite('东篱下-校园综合服务平台','http://study.lanwang.com/');">收藏本站</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2 footer-item">
+                    <div class="footer-wechat">
+                        <img class="img-responsive" src="/image/index/LW_WX.jpg">
+                        <p>微信<span class="hidden-sm">号:</span>dlx</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 footer-item footer-item-last">
+                    <div class="footer-contact">
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-phone.png">17687974147</h2>
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-qq.png">1353433900</h2>
+                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-mob.png">17687974147</h2>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Copyright © 2019 dlt.com All Rights Reversed. 东篱下 <a target="_blank" href="#">赣ICP备18008511号</a>
+                    </p>
+
+                    <div style="width:300px;margin:0 auto; padding:20px 0; text-align: center;">
+                        <a target="_blank" href="#"
+                           style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                            <img src="http://www.clantrip.com/static/images/ghs.png" style="float:left;" />
+                            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#fafafa;">
+                                赣ICP备18008511号</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 通用页脚 -->
+    <!-- 手机端底部 -->
+    <div id="mob-bottom" class="visible-xs-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="tel:17687974147">
+                        <img class="img-responsive center-block"
+                             src="http://www.clantrip.com/static/images/icons/mob-footer-phone.png">
+                        <span>电话咨询</span>
+                    </a>
+                </div>
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="tel:17687974147">
+                        <img class="img-responsive center-block"
+                             src="http://www.clantrip.com/static/images/icons/mob-footer-mob.png">
+                        <span>紧急电话</span>
+                    </a>
+                </div>
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="#">
+                        <img class="img-responsive center-block web-chat"
+                             src="http://www.clantrip.com/static/images/icons/mob-footer-chat.png">
+                        <span>在线咨询</span>
+                    </a>
+                </div>
+                <div class="col-xs-3 mob-bottom-item">
+                    <a href="sms:17687974147">
+                        <img class="img-responsive center-block"
+                             src="http://www.clantrip.com/static/images/icons/mob-footer-msm.png">
+                        <span>短信咨询</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 手机端底部 -->
+    <!-- 整站通用的尾部 -->
+</div>
+</html>

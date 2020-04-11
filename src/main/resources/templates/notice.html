@@ -1,0 +1,178 @@
+<!--功能:留言板HTML代码-->
+<!--修改时间:2019年5月25日20:12:32-->
+<!--修改人:蓝旺-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0, maximum-scale=1.0,  user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>东理淘-交流天地</title>
+    <!--设置图标-->
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!--    <link type="text/css" rel="stylesheet" href="/css/interflow.css">-->
+    <!--    <link type="text/css" rel="stylesheet" href="/Swiper/swiper-4.5.0/dist/css/swiper.min.css">-->
+    <!--    <link type="text/css" rel="stylesheet" charset="UTF-8"-->
+    <!--          href="https://translate.googleapis.com/translate_static/css/translateelement.css">-->
+    <!-- Bootstrap中文字体版 -->
+    <link href="/css/index1.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="/css/index2.css" rel="stylesheet">
+    <link href="/css/notice.css" rel="stylesheet">
+    <!--    <script type="text/javascript" src="/Swiper/swiper-4.5.0/dist/js/swiper.min.js"></script>-->
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="/js/tools.js"></script>
+    <script type="text/javascript" src="/js/notice.js"></script>
+    <style>
+        * {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+<div id="body">
+    <!-- 整站通用的头部及导航条 -->
+    <div th:insert="template::header"></div>
+    <!-- 整站通用的头部及导航条 -->
+    <marquee behavior="scroll" direction="right">
+        通知，现在是滚动文字开发！
+    </marquee>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div style="float: right;">
+                    <span><img th:if="${session.user}!=null" th:src="${session.user.avatarUrl}" id="user-icon"
+                               style="width: 50px; height: 50px; margin-right: 5px"
+                               class="img-circle"></span>
+                    <span id="user">
+                        <a href="/login" id="username" style="font-size: 20px;">登录</a>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div id="MessageBoardTitle">
+                    <h1>新鲜事</h1>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 notice-body">
+                            <textarea id="notice-text"></textarea>
+                            <div>
+                                <label style="float:left;"><input id="notice-private" type="checkbox">匿名发布</label>
+                                <input id="notice-submit" style="float:right;" onclick="create()"
+                                       class="btn btn-default" type="submit" value="发送">
+                            </div>
+                            <br>
+                            <hr size="3px">
+                            <div class="media notice-text" th:if="${notices}!=null" th:each="notice:${notices.list}">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object img-circle" width="50" height="50" alt=""
+                                             th:src="${notice.isPrivate}==0?${notice.user.avatarUrl}:'/image/defaultImage.png'">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <div style="font-weight: bold;font-size: 20px;"
+                                         th:text="${notice.isPrivate}==0?${notice.user.username}:'匿名用户'"></div>
+                                    <div th:text="${notice.info}"></div>
+                                    <div style="float:left;"><span
+                                            style="font-size: 12px;font-weight: normal;color: #999999;"
+                                            th:text="${#dates.format(notice.gmtCreate,'yyyy-MM-dd HH:mm:ss')}"></span>
+                                    </div>
+                                    <div style="float: right">
+                                        <span style="position: relative; right: 10px;">
+                                            <label><a href="#"><img width="10" height="10" src="/image/like.png" alt=""></a><span
+                                                    th:text="'('+${notice.likeCount}+')'"></span></label>
+                                        </span>
+                                        <span><a href="#">评论</a></span><span
+                                            th:text="'('+${notice.commentCount}+')'"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr size="3px">
+                            <div style="text-align: center">
+                                <nav aria-label="Page navigation">
+                                    <ul  th:if="${pageInfo}!=null" class="pagination">
+                                        <li>
+                                            <a th:href="@{${#httpServletRequest.getContextPath()}(page=${pageInfo.getPrePage()})}" aria-label="Previous"
+                                               th:if="${pageInfo.hasPreviousPage}">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li th:if="${pageInfo.pageNum} - 3 <= 0 and ${pageInfo.pageNum} + 3 <= ${pageInfo.pages}"
+                                            th:class="${page==pageInfo.pageNum}?'active':''"
+                                            th:each="page:${#numbers.sequence(1, pageInfo.pageNum + 3)}"><a th:href="@{${#httpServletRequest.getContextPath()}(page=${page})}"
+                                                                                                            th:text="${page}"></a></li>
+                                        <li th:if="${pageInfo.pageNum} - 3 <= 0 and ${pageInfo.pageNum} + 3 > ${pageInfo.pages}"
+                                            th:class="${page==pageInfo.pageNum}?'active':''"
+                                            th:each="page:${#numbers.sequence(1, pageInfo.pages)}"><a th:href="@{${#httpServletRequest.getContextPath()}(page=${page})}"
+                                                                                                      th:text="${page}"></a></li>
+                                        <li th:if="${pageInfo.pageNum} - 3 > 0 and ${pageInfo.pageNum} + 3 <= ${pageInfo.pages}"
+                                            th:class="${page==pageInfo.pageNum}?'active':''"
+                                            th:each="page:${#numbers.sequence(pageInfo.pageNum - 3, pageInfo.pageNum + 3)}"><a
+                                                th:href="@{${#httpServletRequest.getContextPath()}(page=${page})}" th:text="${page}"></a></li>
+                                        <li th:if="${pageInfo.pageNum} - 3 > 0 and ${pageInfo.pageNum} + 3 > ${pageInfo.pages}"
+                                            th:class="${page==pageInfo.pageNum}?'active':''"
+                                            th:each="page:${#numbers.sequence(pageInfo.pageNum - 3, pageInfo.pages)}"><a
+                                                th:href="@{${#httpServletRequest.getContextPath()}(page=${page})}" th:text="${page}"></a></li>
+                                        <li>
+                                            <a th:href="@{${#httpServletRequest.getContextPath()}(page=${pageInfo.getNextPage()})}" aria-label="Next"
+                                               th:if="${pageInfo.hasNextPage}">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+
+    <!--功能:留言板PHP代码,动态显示留言内容-->
+    <!--修改时间:2019年5月25日20:13:25-->
+    <!--修改人:蓝旺-->
+</div>
+<div>
+    <div th:insert="template::footer"></div>
+</div>
+</body>
+<script>
+    function deleteMessage($mid) {
+        if (confirm("是否确定删除?")) {
+            $.ajax({
+                type: "post",
+                url: "deleteMessage.php",
+                data: {
+                    messageID: $mid
+                },
+                success: function () {
+                    location.reload();
+                }
+            })
+        }
+    }
+
+</script>
+</html>

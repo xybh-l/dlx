@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Bootstrap中文字体版 -->
+    <link href="css/index1.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="css/index2.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/news.css">
+</head>
+
+<body>
+    <div th:insert="template::header"></div>
+    <div th:insert="newsTemplate::header"></div>
+    <div class="banner">
+        <div class="w">
+            <div class="banner-img">
+                <a href="#"><img src="image/ECUT1.png"></a>
+            </div>
+            <div class="banner-text">
+                <h3>
+                    <a href="#">
+                        联播+ | 战“疫”时刻 习近平提九大关键词事关全球
+                    </a>
+
+                </h3>
+                <hr style="width: 70%;margin: auto;">
+                <p><a href="#">3月26日，习近平主席在北京出席二十国集团领导人应对新冠肺炎特别峰会并发表重要讲话。这是自新冠肺炎疫情暴发以来，习近平出席的首场重大多边活动。</a></p>
+                <div class="banner-textft">
+                   <a href="#"> <div class="bt"></div></a>
+                   <a href="#"> <div class="bt"></div></a>
+                   <a href="#"> <div class="bt"></div></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="hot" id="hot">
+        <div class="w">
+         <table>
+             <tr>
+                 <td><span></span></td>
+                 <td><span></span></td>
+                 <td class="hotpoint" colspan="2"><span><a target="_blank" th:href="@{${newslist.get(0).get(0).url}}" th:text="${newslist.get(0).get(0).title}"></a></span></td>
+                
+                 <td class="hotpoint" rowspan="2" colspan="5"><span><h4><a href="#hot"><img src="image/top-point.jpg" alt=""></a></h4></span></td>
+                
+                 <td><span></span></td>
+                 <td class="hotpoint" colspan="2"><span><a target="_blank" th:href="@{${newslist.get(0).get(1).url}}" th:text="${newslist.get(0).get(1).title}"></a></span></td>
+                 <td><span></span></td> 
+             </tr>
+             <tr>
+                <td colspan="2" rowspan="2" class="hotpoint"><span><a target="_blank" th:href="@{${newslist.get(0).get(2).url}}" th:text="${newslist.get(0).get(2).title}"></a></span></td>
+                <td><span></span></td>
+                <td class="hotpoint"><span><a target="_blank" th:href="@{${newslist.get(1).get(0).url}}" th:text="${newslist.get(1).get(0).title}"></a></span></td>
+                <td><span></span></td>
+               
+                <td><span></span></td>
+                <td><span></span></td>
+                <td class="hotpoint"><span><a target="_blank" th:href="@{${newslist.get(1).get(1).url}}" th:text="${newslist.get(1).get(1).title}"></a></span></td>
+            </tr>
+            <tr>  <td><span></span></td>
+                <td><span></span></td>
+                <td class="hotpoint" colspan="2"><span><a target="_blank" th:href="@{${newslist.get(2).get(0).url}}" th:text="${newslist.get(2).get(0).title}"></a></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td ><span><a href="#"></a></span></td>
+                <td><span></span></td>
+                <td class="hotpoint"><span><a target="_blank" th:href="@{${newslist.get(2).get(1).url}}" th:text="${newslist.get(2).get(1).title}"></a></span></td>
+                <td><span></span></td>
+            </tr>
+            <tr> 
+                <td><span></span></td>
+                <td><span></span></td>
+                <td class="hotpoint"><span><a target="_blank" th:href="@{${newslist.get(1).get(2).url}}" th:text="${newslist.get(1).get(2).title}"></a></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td colspan="2"><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+            </tr>
+         </table>
+        </div>
+    </div>
+    <div th:insert="template::footer"></div>
+</body>
+
+</html>

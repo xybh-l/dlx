@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="online.xybh.dlx.mapper.UserExtMapper">
+    <resultMap id="BaseResultMap" type="online.xybh.dlx.model.User">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="username" jdbcType="CHAR" property="username" />
+        <result column="password" jdbcType="CHAR" property="password" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="gmt_create" jdbcType="BIGINT" property="gmtCreate" />
+        <result column="auth" jdbcType="INTEGER" property="auth" />
+        <result column="token" jdbcType="CHAR" property="token" />
+        <result column="gmt_modify" jdbcType="BIGINT" property="gmtModify" />
+        <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, username, password, email, gmt_create, gmt_modify, avatar_url
+  </sql>
+    <select id="selectByUserNameAndEmail" parameterType="online.xybh.dlx.model.User" resultMap="BaseResultMap">
+        select
+        distinct
+        <include refid="Base_Column_List" />
+        from user
+        where username=#{username,jdbcType=VARCHAR} or email=#{email,jdbcType=VARCHAR}
+    </select>
+</mapper>

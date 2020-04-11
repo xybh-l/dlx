@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+body{
+    background-color: #f3f5f7;
+}
+.w{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+/* 导航栏开始 */
+.nav-main{
+    height: 82px;
+}
+.header{
+    height: 74px;
+    margin: 30px auto;
+    background-color: #f9c501;
+}
+.logo{
+    float: left;
+    margin: 0 60px;
+    height: 74px;
+    width: 74px;
+}
+.nav{
+    float:left;
+}
+.nav ul li{
+/* 文字不一样多的时候用padding挤开 */
+    float: left;
+}
+.nav ul li a{
+    display: block;
+    /*height: 74px;*/
+    padding: 0 10px;
+    margin-right: 20px;
+    line-height: 74px;
+    color: #050505;
+}
+.nav ul li a:hover{
+    border-bottom: 2px solid black;
+    color: whitesmoke;
+    font-weight: 700;
+}
+.search{
+    float: left;
+    margin-left: 70px;
+}
+.search input{
+    margin: 15px 0;
+    float: left;
+    padding-left: 20px;
+    width: 340px;
+    height: 40px;
+    border: 1px #fff;
+    border-radius: 10px;
+    color: #ccc;
+}
+.search button{
+    margin: 15px 0;
+    background:#f9c501;
+    height: 40px;
+    width: 60px;
+    border-radius:20px ;
+}
+.banner{
+    height: 490px;
+
+}
+.banner-img{
+    float: left;
+    width: 785px;
+    height: 490px;
+    background-color: #fff;
+}
+.banner-img a img{
+    width: 100%;
+    height: 100%;
+}
+.banner-text{
+    float: left;
+    width: 415px;
+    height: 490px;
+    background-color: #fff;
+
+}
+.banner-text h3{
+    width: 336px;
+    height: 80px;
+    margin: 0px 40px 13px;
+    padding: 32px 0px 0px;
+
+}
+.banner-text h3 a{
+    color: #333;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.banner-text p{
+    margin: 0 40px;
+    padding: 20px 0 0;
+    width: 336px;
+    height: 154px;
+}
+.banner-text p a{
+    color: #666;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.banner-textft{
+    width: 336px;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+
+}
+.bt{
+    display: inline-block;
+    margin: 0 10px;
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    background-color: rgba(252, 243, 243, 0.74);
+}
+.banner-textft a div:hover{
+    background-color: #f9c501;
+}
+.hot{
+    width: auto;
+    height: 512px;
+    background-color: #f9c501;
+
+}
+.squ{
+    width: 99px;
+    height: 99px;
+    margin: 5px;
+}
+table{
+    padding: 37px 0px 0px;
+    border-collapse: unset;
+    border-spacing: unset;
+}
+.hot td{
+    margin: 5px;
+    width: 99px;
+    height: 99px;
+    text-align: center;
+    background:url(imgs/hot-bg.png) rgba(0, 0, 0, 0.2);
+    border: 1px solid  #000;
+    border-radius: 10px;
+
+}
+.hot td h4{
+    font-size: 45px;
+    font-weight: 700;
+}
+.hot a{
+    color: #fff;;
+}
+.hot .hotpoint:hover{
+    background-color: #000;
+    font-weight: 900;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+.hot .hotpoint a{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;      /* 可以显示的行数，超出部分用...表示*/
+    -webkit-box-orient: vertical;
+}
+.footer{
+    background-color: aquamarine;
+    height: 240px;
+    padding-top: 30px;
+}
+.version{
+    background-color: blue;
+    height: 125px;
+}
+

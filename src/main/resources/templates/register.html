@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>账号注册-东篱下</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/my-login.css">
+</head>
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="/image/logo.jpg">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">注册</h4>
+								<div class="form-group">
+									<label for="name">账号名</label>
+									<input id="name" type="text" class="form-control" name="name" required autofocus>
+								</div>
+
+								<div class="form-group">
+									<label for="email">电子邮箱</label>
+									<input id="email" type="email" class="form-control" name="email" required>
+								</div>
+
+								<div class="form-group">
+									<label for="password">密码</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+								</div>
+
+								<div class="form-group">
+									<label>
+										<input type="checkbox" name="agree" id="agree" value="1"> 我已同意网站协议
+									</label>
+								</div>
+
+								<div class="form-group no-margin">
+									<button type="submit" onclick="register()" onsubmit="return false" class="btn btn-primary btn-block">
+										注册
+									</button>
+								</div>
+								<div class="margin-top20 text-center">
+									已经有一个账户 <a href="/login">登录</a>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="/js/jquery-3.4.1.min.js"></script>
+	<script src="/css/bootstrap/js/bootstrap.min.js"></script>
+	<script>
+		function register() {
+			const email = $("#email").val();
+			const password = $("#password").val();
+			const name = $("#name").val();
+			const agree = $("#agree").is(":checked");
+			if (!agree){
+				alert("请同意网站协议!");
+				return
+			}
+			$.ajax({
+				url: '/registerUser',
+				type: "post",
+				data: {
+					email: email,
+					password: password,
+					username: name
+				},
+				success: function (data) {
+					let res = data;
+					if (res.statusCode === 200 && res.message === '注册成功') {
+						alert("注册成功,前往登录...");
+						$(location).attr("href",'/login');
+					} else {
+						alert(res.message)
+					}
+				},
+				error: function () {
+					alert("服务器错误!")
+				}
+			})
+		}
+	</script>
+</body>
+</html>

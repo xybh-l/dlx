@@ -1,0 +1,141 @@
+* {
+  /*清空margin padding初始值*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header_1 {
+  height: 100px;
+}
+
+/*.header1_center_pwd a {
+  float: right;
+  width: 70px;
+  height: 83px;
+  line-height: 83px;
+  display: block;
+  text-decoration: none;
+}*/
+
+#header_1 .header1_center {
+  width: 1000px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.header1_center .h1_pg {
+  float: left;
+  height: 100px;
+  width: 400px;
+}
+
+#header_1 .header1_center .h1_txt {
+  float: left;
+  width: 600px;
+  height: 100px;
+  text-align: center;
+  margin-top: 50px;
+  font: 22px "华文彩云";
+}
+#header_1 .header1_center .h1_txt a{
+  text-decoration: none;
+  height: 100px;
+  /*background-image: url(../image/1.png);*/
+  background-size: 50px;
+}
+
+#header_2 {
+  height: 210px;
+  /*background: url("../image/pic/1.jpg");*/
+  background-size: 1920px 490px;
+  position: relative;
+}
+
+#header_2 .header_2_k {
+  width: 300px;
+  height: 175px;
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  columns: #000;
+  left: 323px;
+  top: 35px;
+}
+
+#header_2 .header_2_k img {
+  border: 2px #000;
+}
+
+#header_3 {
+  height: 815px;
+  position: relative;
+  background: url("../image/pic/timg (2).jpg");
+  background-size: 1920px 815px;
+}
+
+#header_3 .header_3_k .header_3_k_l .h3_p {
+  height: 520px;
+  width: 360px;
+  position: absolute;
+  right: 25px;
+  top: 135px;
+}
+
+
+
+#header_3 .header_3_k {
+  width: 1200px;
+  height: 815px;
+  position: absolute;
+  left: 323px;
+  top: 0px;
+  position: relative;
+}
+
+.header_3_k .header_3_k_l {
+  width: 610px;
+  height: 815px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: url("../image/pic/2.png");
+  background-size: 600px 815px;
+  font: 35px "楷体";
+  color: red;
+  position: relative;
+}
+
+#header_4 {
+  height: 275px;
+  position: relative;
+}
+
+#header_4 .header_4_k {
+  width: 1000px;
+  height: 200px;
+  position: absolute;
+  left: 323px;
+  top: 30px;
+  position: relative;
+}
+
+
+
+
+#header_4 .header_4_k .header_4_k_l {
+  width: 448px;
+  height: 160px;
+  background: black;
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+#header_4 .header_4_k p {
+  font: 20px "微软雅黑";
+}
+
+#header_4 .header_4_k .english {
+  font: 60px "Garamond";
+}
